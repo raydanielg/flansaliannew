@@ -11,4 +11,17 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                quietDeps: true,
+                logger: {
+                    warn: (message, options) => {
+                        if (options.deprecation) return;
+                        console.warn(message);
+                    }
+                }
+            },
+        },
+    },
 });
