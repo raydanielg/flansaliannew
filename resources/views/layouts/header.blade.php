@@ -12,46 +12,52 @@
     </div>
 </div>
 
-<header class="main-header py-4 bg-white border-bottom shadow-sm">
+<header class="main-header py-3 bg-white border-bottom shadow-sm">
     <div class="container">
-        <div class="d-flex align-items-center justify-content-center">
+        <div class="row align-items-center">
             <!-- Logo -->
-            <div class="me-4">
-                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo-lg" style="height: 90px; width: auto;">
+            <div class="col-md-auto text-center text-md-start mb-3 mb-md-0">
+                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo-lg" style="height: 100px; width: auto; max-width: 100%;">
             </div>
             
             <!-- Centered Text -->
-            <div class="text-center">
-                <p class="mb-1 text-muted small fw-bold tracking-widest text-uppercase">The United Republic of Tanzania</p>
-                <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: 2.5rem; letter-spacing: -1px; line-height: 1;">FRANSALIAN SCHOOL BOMBAMBILI</h1>
+            <div class="col-md text-center text-md-start ps-md-4">
+                <p class="mb-1 text-muted small fw-bold tracking-widest text-uppercase d-none d-sm-block">The United Republic of Tanzania</p>
+                <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.5rem, 5vw, 2.8rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL BOMBAMBILI</h1>
                 <p class="mb-0 text-secondary fw-bold fs-5">Primary Day School - Gongo la Mboto</p>
             </div>
         </div>
     </div>
 </header>
 
-<nav class="main-nav sticky-top shadow-sm" style="background-color: #004488;">
-    <div class="container d-flex justify-content-between align-items-center">
-        <ul class="nav">
-            <li class="nav-item"><a href="{{ route('welcome') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">HOME</a></li>
-            <li class="nav-item"><a href="{{ route('msfs') }}" class="nav-link {{ Request::is('msfs') ? 'active' : '' }}">MSFS</a></li>
-            <li class="nav-item"><a href="{{ route('mission') }}" class="nav-link {{ Request::is('mission') ? 'active' : '' }}">MISSION</a></li>
-            <li class="nav-item"><a href="{{ route('vision') }}" class="nav-link {{ Request::is('vision') ? 'active' : '' }}">VISION</a></li>
-            <li class="nav-item"><a href="{{ route('admission') }}" class="nav-link {{ Request::is('admission') ? 'active' : '' }}">ADMISSION</a></li>
-            <li class="nav-item"><a href="{{ route('fees') }}" class="nav-link {{ Request::is('fees') ? 'active' : '' }}">FEES</a></li>
-            <li class="nav-item"><a href="{{ route('portal') }}" class="nav-link {{ Request::is('portal') ? 'active' : '' }}">PARENTS' PORTAL</a></li>
-            <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">CONTACT US</a></li>
-        </ul>
-        <div class="auth-buttons ms-auto">
-            @guest
-                <a href="{{ route('login') }}" class="btn btn-danger btn-sm fw-bold px-4 rounded">LOGIN</a>
-            @else
-                <div class="d-flex align-items-center">
-                    <a href="{{ url('/home') }}" class="btn btn-danger btn-sm fw-bold px-4 rounded me-2">DASHBOARD</a>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-outline-light btn-sm fw-bold px-3 rounded">LOGOUT</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-                </div>
-            @endguest
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm p-0" style="background-color: #004488;">
+    <div class="container">
+        <button class="navbar-toggler border-white text-white my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto main-nav">
+                <li class="nav-item"><a href="{{ route('welcome') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">HOME</a></li>
+                <li class="nav-item"><a href="{{ route('msfs') }}" class="nav-link {{ Request::is('msfs') ? 'active' : '' }}">MSFS</a></li>
+                <li class="nav-item"><a href="{{ route('mission') }}" class="nav-link {{ Request::is('mission') ? 'active' : '' }}">MISSION</a></li>
+                <li class="nav-item"><a href="{{ route('vision') }}" class="nav-link {{ Request::is('vision') ? 'active' : '' }}">VISION</a></li>
+                <li class="nav-item"><a href="{{ route('admission') }}" class="nav-link {{ Request::is('admission') ? 'active' : '' }}">ADMISSION</a></li>
+                <li class="nav-item"><a href="{{ route('fees') }}" class="nav-link {{ Request::is('fees') ? 'active' : '' }}">FEES</a></li>
+                <li class="nav-item"><a href="{{ route('portal') }}" class="nav-link {{ Request::is('portal') ? 'active' : '' }}">PARENTS' PORTAL</a></li>
+                <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">CONTACT US</a></li>
+            </ul>
+            <div class="auth-buttons ms-lg-auto py-2 py-lg-0">
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-danger btn-sm fw-bold px-4 rounded">LOGIN</a>
+                @else
+                    <div class="d-flex align-items-center">
+                        <a href="{{ url('/home') }}" class="btn btn-danger btn-sm fw-bold px-4 rounded me-2">DASHBOARD</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-outline-light btn-sm fw-bold px-3 rounded">LOGOUT</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                    </div>
+                @endguest
+            </div>
         </div>
     </div>
 </nav>
