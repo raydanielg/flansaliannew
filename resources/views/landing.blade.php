@@ -194,49 +194,47 @@
                 <h2 class="display-5 fw-bold text-dark">Dedicated <span class="text-primary">Staff</span></h2>
             </div>
             <div class="row g-4">
+                @php
+                    $staff = [
+                        ['name' => 'School Principal', 'role' => 'Leadership', 'desc' => 'Committed to academic excellence and spiritual growth.'],
+                        ['name' => 'Academic Dean', 'role' => 'Academics', 'desc' => 'Overseeing our rigorous and innovative curriculum.'],
+                        ['name' => 'Head Teacher', 'role' => 'Operations', 'desc' => 'Ensuring a safe and supportive environment for all.'],
+                        ['name' => 'School Chaplain', 'role' => 'Spiritual', 'desc' => 'Guiding the spiritual journey of our students.'],
+                    ];
+                @endphp
+                @foreach($staff as $member)
                 <div class="col-lg-3 col-md-6">
-                    <div class="card border-0 shadow-sm rounded-5 overflow-hidden text-center p-4 transition-hover">
-                        <div class="mb-3">
-                            <img src="https://ui-avatars.com/api/?name=School+Principal&background=003366&color=fff&size=128" alt="Principal" class="rounded-circle shadow-sm" style="width: 100px; height: 100px;">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center p-4 h-100 transition-hover staff-card">
+                        <div class="mb-3 position-relative d-inline-block mx-auto">
+                            <img src="https://ui-avatars.com/api/?name={{ urlencode($member['name']) }}&background=003366&color=fff&size=128" alt="{{ $member['name'] }}" class="rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #f8f9fa;">
                         </div>
-                        <h5 class="fw-bold mb-1">School Principal</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3">Leadership</p>
-                        <p class="text-muted small mb-0">Committed to academic excellence and spiritual growth.</p>
+                        <h5 class="fw-bold mb-1 text-dark">{{ $member['name'] }}</h5>
+                        <p class="text-primary small fw-bold text-uppercase mb-3 tracking-wider">{{ $member['role'] }}</p>
+                        <p class="text-muted small mb-0">{{ $member['desc'] }}</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-0 shadow-sm rounded-5 overflow-hidden text-center p-4 transition-hover">
-                        <div class="mb-3">
-                            <img src="https://ui-avatars.com/api/?name=Academic+Dean&background=003366&color=fff&size=128" alt="Dean" class="rounded-circle shadow-sm" style="width: 100px; height: 100px;">
-                        </div>
-                        <h5 class="fw-bold mb-1">Academic Dean</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3">Academics</p>
-                        <p class="text-muted small mb-0">Overseeing our rigorous and innovative curriculum.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-0 shadow-sm rounded-5 overflow-hidden text-center p-4 transition-hover">
-                        <div class="mb-3">
-                            <img src="https://ui-avatars.com/api/?name=Head+Teacher&background=003366&color=fff&size=128" alt="Head Teacher" class="rounded-circle shadow-sm" style="width: 100px; height: 100px;">
-                        </div>
-                        <h5 class="fw-bold mb-1">Head Teacher</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3">Operations</p>
-                        <p class="text-muted small mb-0">Ensuring a safe and supportive environment for all.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-0 shadow-sm rounded-5 overflow-hidden text-center p-4 transition-hover">
-                        <div class="mb-3">
-                            <img src="https://ui-avatars.com/api/?name=School+Chaplain&background=003366&color=fff&size=128" alt="Chaplain" class="rounded-circle shadow-sm" style="width: 100px; height: 100px;">
-                        </div>
-                        <h5 class="fw-bold mb-1">School Chaplain</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3">Spiritual</p>
-                        <p class="text-muted small mb-0">Guiding the spiritual journey of our students.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
+
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --primary-yellow: #ffc107;
+        }
+        .text-primary { color: var(--primary-blue) !important; }
+        .btn-primary { background-color: var(--primary-blue); border-color: var(--primary-blue); }
+        .btn-primary:hover { background-color: #002244; border-color: #002244; }
+        .bg-primary { background-color: var(--primary-blue) !important; }
+        
+        .staff-card { border-bottom: 4px solid transparent !important; }
+        .staff-card:hover { 
+            border-bottom: 4px solid var(--primary-blue) !important;
+            transform: translateY(-10px);
+        }
+        .tracking-wider { letter-spacing: 0.1em; }
+    </style>
 
     <!-- CTA Section -->
     <section class="py-5 bg-white">
