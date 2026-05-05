@@ -1,17 +1,21 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
     RewriteEngine On
     RewriteBase /
 
-    # Redirect /public/index.php to /
-    RewriteCond %{THE_REQUEST} /public/index\.php [NC]
-    RewriteRule ^public/index\.php(.*)$ $1 [L,R=301]
+    # 1. Kuelekeza maombi ya folder root kwenda public/index.php
+    RewriteRule ^$ public/index.php [L]
 
-    # If the file exists in /public, serve it from there
+    # 2. Ikiwa faili lipo ndani ya folda la public, litoe huko moja kwa moja (kwa ajili ya CSS, JS, Images)
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
     RewriteRule ^(.*)$ public/$1 [L]
 
-    # If it's not a real file or directory, send to public/index.php
+    # 3. Kuelekeza maombi yote ya kurasa (routes) kwenda public/index.php bila kubadilisha URL
+    # Hii inatatua tatizo la 404 kwenye /contact, /mission, nk.
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ public/index.php [L]
