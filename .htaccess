@@ -6,15 +6,16 @@
     RewriteEngine On
     RewriteBase /
 
-    # 🔥 Force redirect zote kwenda public folder
-    RewriteCond %{REQUEST_URI} !^/public/
+    # 1. Kuelekeza root request kwenda public/index.php
+    RewriteRule ^$ public/index.php [L]
 
-    # 📁 If file exists in public, serve it directly (CSS, JS, images)
+    # 2. Kama faili lipo ndani ya /public (CSS, JS, images), litoe huko
+    RewriteCond %{REQUEST_URI} !^/public/
     RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
     RewriteRule ^(.*)$ public/$1 [L]
 
-    # 🚀 Send everything else to Laravel front controller
+    # 3. Kila kitu kingine (Routes kama /contact) peleka public/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^ public/index.php [L]
+    RewriteRule ^(.*)$ public/index.php [L]
 </IfModule>
