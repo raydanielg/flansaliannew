@@ -15,7 +15,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @if(app()->environment('production'))
+        <link rel="stylesheet" href="{{ asset('build/assets/app-070655a4.css') }}">
+        <script src="{{ asset('build/assets/app-8d1dc501.js') }}" defer></script>
+    @else
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @endif
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Custom Styles -->
     <style>
