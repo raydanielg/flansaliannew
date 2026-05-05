@@ -96,12 +96,12 @@
                 </div>
                 <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn animate__delay-1s">
                     <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative">
-                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1577891729319-f69bc39ca749?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn animate__delay-2s">
                     <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative">
-                        <img src="https://images.unsplash.com/photo-1523050335392-9ae867749296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
