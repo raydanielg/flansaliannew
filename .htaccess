@@ -1,16 +1,22 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
     RewriteEngine On
 
     # Kuelekeza maombi kwenda kwenye folda la public kama faili halipo kwenye root
+    # Hii inaruhusu assets (css/js) kupatikana moja kwa moja
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
-    RewriteRule ^(.*)$ /public/$1 [L]
+    RewriteRule ^(.*)$ public/$1 [L]
 
-    # Ikiwa maombi ni ya folder root, yapeleke public/index.php
+    # Ikiwa ni folder root, yapeleke public/index.php
     RewriteRule ^$ public/index.php [L]
 
-    # Maombi mengine yote yapeleke public/index.php
+    # Maombi mengine yote yapeleke public/index.php ili Laravel iweze kudeal nayo
+    # Hii inatatua tatizo la 404 kwenye /mission, /vision, n.k.
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ public/index.php/$1 [L]
+    RewriteRule ^(.*)$ public/index.php [L]
 </IfModule>
