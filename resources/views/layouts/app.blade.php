@@ -241,6 +241,7 @@
 <body>
     <div id="app">
         @auth
+        @if(!Request::is('/') && !Request::is('home') && !Request::is('home/*'))
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -294,6 +295,7 @@
                 </div>
             </div>
         </nav>
+        @endif
         @endauth
 
         <main class="{{ (Request::is('login', 'register', 'password/*', 'home')) ? '' : '' }}">

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             FeeSeeder::class,
             AdmissionSeeder::class,
+            AdminSeeder::class,
         ]);
     }
 }

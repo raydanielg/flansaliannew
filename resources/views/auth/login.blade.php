@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5" style="background-image: url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="auth-card animate__animated animate__zoomIn">
         <!-- Sidebar (60%) -->
         <div class="auth-sidebar animate__animated animate__fadeInLeft animate__delay-1s">

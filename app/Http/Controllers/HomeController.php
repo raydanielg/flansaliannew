@@ -24,6 +24,11 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
+
+        if ($user && $user->isAdmin()) {
+            return redirect()->route('admin.dashboard');
+        }
+
         $applications = $user ? \App\Models\Application::where('user_id', $user->id)->get() : collect();
         return view('home', compact('applications'));
     }
