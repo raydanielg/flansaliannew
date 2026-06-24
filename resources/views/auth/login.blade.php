@@ -35,12 +35,11 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label class="form-label fw-bold small text-muted mb-1">Email Address</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0 ps-3"><i class="bi bi-envelope text-primary"></i></span>
-                        <input id="email" type="email" class="form-control border-start-0 @error('email') is-invalid @enderror" 
-                               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus 
-                               placeholder="Enter your email">
+                    <div class="login-input-group">
+                        <i class="bi bi-envelope-fill login-input-icon"></i>
+                        <input id="email" type="email" class="login-input @error('email') is-invalid @enderror"
+                               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                               placeholder="Email Address">
                     </div>
                     @error('email')
                         <span class="invalid-feedback d-block" role="alert">
@@ -50,12 +49,14 @@
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label fw-bold small text-muted mb-1">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0 ps-3"><i class="bi bi-lock text-primary"></i></span>
-                        <input id="password" type="password" class="form-control border-start-0 @error('password') is-invalid @enderror" 
+                    <div class="login-input-group">
+                        <i class="bi bi-lock-fill login-input-icon"></i>
+                        <input id="password" type="password" class="login-input @error('password') is-invalid @enderror"
                                name="password" required autocomplete="current-password"
-                               placeholder="Enter your password">
+                               placeholder="Password">
+                        <button type="button" class="login-toggle-pass" onclick="togglePassword()">
+                            <i class="bi bi-eye-slash" id="eyeIcon"></i>
+                        </button>
                     </div>
                     @error('password')
                         <span class="invalid-feedback d-block" role="alert">
@@ -102,5 +103,95 @@
 .auth-sidebar .school-logo {
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
+.login-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.login-input {
+    width: 100%;
+    padding: 14px 14px 14px 48px;
+    border: 2px solid #e0e6ed;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    background: #fff;
+    transition: all 0.25s ease;
+    outline: none;
+}
+.login-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 5px rgba(0, 51, 102, 0.12);
+    background: #fff;
+}
+.login-input::placeholder {
+    color: #aab;
+    font-weight: 500;
+}
+.login-input-icon {
+    position: absolute;
+    left: 16px;
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    z-index: 2;
+    transition: all 0.25s ease;
+}
+.login-input:focus + .login-input-icon,
+.login-input-group:focus-within .login-input-icon {
+    color: var(--secondary-blue);
+    transform: scale(1.15);
+}
+.login-toggle-pass {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 4px;
+    transition: color 0.2s;
+}
+.login-toggle-pass:hover {
+    color: var(--primary-blue);
+}
+.btn-auth {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    width: 100%;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 51, 102, 0.35);
+}
+.btn-auth:active {
+    transform: translateY(0);
+}
 </style>
+
+<script>
+function togglePassword() {
+    const pass = document.getElementById('password');
+    const icon = document.getElementById('eyeIcon');
+    if (pass.type === 'password') {
+        pass.type = 'text';
+        icon.className = 'bi bi-eye';
+    } else {
+        pass.type = 'password';
+        icon.className = 'bi bi-eye-slash';
+    }
+}
+</script>
 @endsection

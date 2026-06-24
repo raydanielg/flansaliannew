@@ -89,7 +89,12 @@
                 <h2 class="display-5 fw-bold mb-0 text-dark">School <span class="text-primary">Gallery</span></h2>
             </div>
             @php
-                $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->get();
+                $galleryImages = collect();
+                try {
+                    $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->get();
+                } catch (\Exception $e) {
+                    $galleryImages = collect();
+                }
             @endphp
             <div class="row g-4">
                 @forelse($galleryImages as $index => $gImg)
