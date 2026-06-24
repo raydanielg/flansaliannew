@@ -238,11 +238,15 @@ class AdminController extends Controller
         $request->validate([
             'title' => 'required|string',
             'description' => 'nullable|string',
-            'image' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
             'category' => 'required|string',
             'order' => 'required|integer',
         ]);
-        Gallery::create($request->all());
+        $data = $request->except('image');
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('gallery', 'public');
+        }
+        Gallery::create($data);
         return back()->with('success', 'Gallery image added.');
     }
 
@@ -251,11 +255,15 @@ class AdminController extends Controller
         $request->validate([
             'title' => 'required|string',
             'description' => 'nullable|string',
-            'image' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
             'category' => 'required|string',
             'order' => 'required|integer',
         ]);
-        $gallery->update($request->all());
+        $data = $request->except('image');
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('gallery', 'public');
+        }
+        $gallery->update($data);
         return back()->with('success', 'Gallery image updated.');
     }
 

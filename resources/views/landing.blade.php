@@ -88,25 +88,50 @@
                 <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Environment</h6>
                 <h2 class="display-5 fw-bold mb-0 text-dark">School <span class="text-primary">Gallery</span></h2>
             </div>
+            @php
+                $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->get();
+            @endphp
             <div class="row g-4">
-                <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn">
-                    <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative">
-                        <img src="{{ asset('cropped-unnamed-8.jpg') }}" alt="Gallery 1" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
+                @forelse($galleryImages as $index => $gImg)
+                <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn {{ $index > 0 ? 'animate__delay-' . min($index, 3) . 's' : '' }}">
+                    <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative" style="cursor: pointer;" onclick="openLightbox('{{ asset('storage/' . $gImg->image) }}', '{{ $gImg->title }}')">
+                        <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }}" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none'">
+                        <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-gradient-dark text-white" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                            <h6 class="fw-bold mb-0">{{ $gImg->title }}</h6>
+                            <small class="opacity-75">{{ $gImg->category }}</small>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn animate__delay-1s">
-                    <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative">
-                        <img src="https://images.unsplash.com/photo-1577891729319-f69bc39ca749?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
-                    </div>
+                @empty
+                <div class="col-12 text-center text-muted py-5">
+                    <i class="bi bi-images fs-1 d-block mb-3 opacity-25"></i>
+                    <p>No gallery images yet.</p>
                 </div>
-                <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn animate__delay-2s">
-                    <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative">
-                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;">
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="galleryLightbox" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 text-center position-relative">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="z-index: 10;"></button>
+                    <img id="lightboxImage" src="" class="img-fluid rounded-4 shadow-lg" style="max-height: 85vh; object-fit: contain;">
+                    <h5 id="lightboxTitle" class="text-white mt-3 fw-bold text-shadow"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function openLightbox(src, title) {
+        document.getElementById('lightboxImage').src = src;
+        document.getElementById('lightboxTitle').textContent = title;
+        const modal = new bootstrap.Modal(document.getElementById('galleryLightbox'));
+        modal.show();
+    }
+    </script>
 
     <!-- FAQ Section -->
     <section class="py-5 bg-white">
