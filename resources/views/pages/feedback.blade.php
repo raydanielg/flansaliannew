@@ -13,7 +13,7 @@
                     <i class="bi bi-house-door-fill text-white small"></i>
                     <a href="{{ route('welcome') }}" class="text-white text-decoration-none small">Home</a>
                     <i class="bi bi-chevron-right text-white-50 small"></i>
-                    <span class="text-warning small fw-bold">{{ ucfirst($page->slug) }}</span>
+                    <span class="text-warning small fw-bold">Feedback</span>
                 </div>
                 <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">{{ $page->title }}</h1>
                 <div class="mx-auto" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4a); border-radius: 2px;"></div>
@@ -27,56 +27,49 @@
             <div class="col-md-11">
                 <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: #fff;">
                     <div class="row g-0">
-                        <!-- Content Sidebar Info -->
                         <div class="col-lg-3 bg-light p-4 d-flex flex-column align-items-center text-center border-end">
                             <div class="icon-box bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4 shadow-sm" style="width: 100px; height: 100px; border: 2px solid var(--primary-blue);">
-                                <i class="bi bi-eye-fill fs-1" style="color: var(--primary-blue) !important;"></i>
+                                <i class="bi bi-chat-dots-fill fs-1" style="color: var(--primary-blue) !important;"></i>
                             </div>
-                            <h4 class="fw-bold text-dark mb-2 text-uppercase small tracking-widest">VISION</h4>
+                            <h4 class="fw-bold text-dark mb-2 text-uppercase small tracking-widest">FEEDBACK</h4>
                             <div class="divider bg-warning mx-auto mb-4" style="width: 40px; height: 3px;"></div>
-                            <p class="text-muted small italic">"Wisdom is Freedom"</p>
+                            <p class="text-muted small italic">We value your opinion.</p>
                         </div>
-
-                        <!-- Main Content Area -->
                         <div class="col-lg-9 p-5">
-                            <div class="content-header mb-4 pb-3 border-bottom text-center text-lg-start">
-                                <h2 class="fw-bold text-dark mb-0" style="color: var(--primary-blue) !important;">The Fransalian Vision</h2>
+                            <div class="content-header mb-4 pb-3 border-bottom">
+                                <h2 class="fw-bold text-dark mb-0" style="color: var(--primary-blue) !important;">Share Your Thoughts</h2>
                             </div>
-                            
-                            <div class="page-body-content text-center text-lg-start">
-                                <p class="lead fs-3 text-dark italic mb-5" style="line-height: 1.6;">
-                                    "{{ $page->content }}"
-                                </p>
-                                
-                                <div class="row mt-5 g-4 text-start">
-                                    <div class="col-md-6 animate__animated animate__fadeInUp">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-flag-fill text-success fs-4 me-3"></i>
-                                            <div>
-                                                <h5 class="fw-bold text-dark">National Identity</h5>
-                                                <p class="text-muted">Fostering patriotism, respect for national symbols, and appreciation for our rich cultural heritage.</p>
-                                            </div>
-                                        </div>
+                            <p class="lead text-muted mb-5" style="line-height: 1.8;">{{ $page->content }}</p>
+                            <form action="{{ route('feedback.store') }}" method="POST" class="bg-light p-4 rounded-4 shadow-sm">
+                                @csrf
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold tracking-wider">FULL NAME</label>
+                                        <input type="text" name="name" class="form-control rounded-3 py-2 px-3" placeholder="Your name" required>
                                     </div>
-                                    <div class="col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-globe-americas text-success fs-4 me-3"></i>
-                                            <div>
-                                                <h5 class="fw-bold text-dark">Global Contribution</h5>
-                                                <p class="text-muted">Preparing students to be responsible global citizens who contribute positively to a better world.</p>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold tracking-wider">EMAIL</label>
+                                        <input type="email" name="email" class="form-control rounded-3 py-2 px-3" placeholder="Your email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold tracking-wider">SUBJECT</label>
+                                        <input type="text" name="subject" class="form-control rounded-3 py-2 px-3" placeholder="How can we help?">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold tracking-wider">MESSAGE</label>
+                                        <textarea name="message" class="form-control rounded-3" rows="4" placeholder="Write your message..." required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold shadow" style="background-color: var(--primary-blue) !important;">
+                                            <i class="bi bi-send-fill me-2 small"></i> SEND MESSAGE
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <style>
-        .tracking-wider { letter-spacing: 0.1rem; }
-    </style>
 @endsection
