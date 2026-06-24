@@ -22,7 +22,6 @@
             
             <!-- Centered Text -->
             <div class="col-md text-center text-md-start ps-md-4">
-                <p class="mb-1 text-muted small fw-bold tracking-widest text-uppercase d-none d-sm-block">The United Republic of Tanzania</p>
                 <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.5rem, 5vw, 2.8rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL BOMBAMBILI</h1>
                 <p class="mb-0 text-secondary fw-bold fs-5">Primary Day School - Gongo la Mboto</p>
             </div>
