@@ -245,62 +245,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="py-5 bg-white overflow-hidden">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our People</h6>
-                <h2 class="display-5 fw-bold mb-0 text-dark">Meet Our <span class="text-primary">Team</span></h2>
-                <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">Dedicated professionals committed to nurturing and educating every child.</p>
-            </div>
-            @php
-                $teamMembers = collect();
-                try {
-                    $teamMembers = \App\Models\Team::where('is_active', true)->orderBy('order')->take(6)->get();
-                } catch (\Exception $e) {
-                    $teamMembers = collect();
-                }
-            @endphp
-            <div class="row g-4 justify-content-center">
-                @forelse($teamMembers as $index => $member)
-                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp {{ $index > 0 ? 'animate__delay-' . min($index, 3) . 's' : '' }}">
-                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden transition-hover text-center">
-                        <div style="height: 300px; background: #f8f9fa; overflow: hidden;">
-                            @if($member->photo)
-                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;">
-                            @else
-                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
-                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 100px; height: 100px; font-size: 2.5rem;">
-                                    {{ strtoupper(substr($member->name, 0, 1)) }}
-                                </div>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="fw-bold mb-1" style="color: #003366;">{{ $member->name }}</h5>
-                            <p class="text-warning fw-bold small mb-2">{{ $member->position }}</p>
-                            <p class="text-muted small mb-3" style="line-height: 1.6;">{{ Str::limit($member->bio ?? 'Committed to excellence in education.', 80) }}</p>
-                            <a href="{{ route('team') }}" class="btn btn-sm btn-outline-primary rounded-pill px-4 fw-bold">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-                @empty
-                <div class="col-12 text-center text-muted py-5">
-                    <i class="bi bi-people fs-1 d-block mb-3 opacity-25"></i>
-                    <p>No team members added yet.</p>
-                </div>
-                @endforelse
-            </div>
-            @if($teamMembers->count() > 0)
-            <div class="text-center mt-5">
-                <a href="{{ route('team') }}" class="btn btn-primary rounded-pill px-5 fw-bold">
-                    <i class="bi bi-people me-2"></i>View All Team Members
-                </a>
-            </div>
-            @endif
-        </div>
-    </section>
-
     <!-- Lightbox Modal -->
     <div class="modal fade" id="galleryLightbox" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
