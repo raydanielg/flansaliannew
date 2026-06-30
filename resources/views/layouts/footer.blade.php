@@ -6,15 +6,15 @@
                 <div class="d-flex align-items-center mb-4">
                     <img src="{{ asset('logo.png') }}" 
                          alt="School Logo" 
-                         class="img-fluid me-3" 
-                         style="max-height: 65px; filter: brightness(0) invert(1);">
+                         class="img-fluid me-3 bg-white rounded-circle p-2 shadow-sm" 
+                         style="max-height: 85px;">
                     <div>
                         <h5 class="mb-0 fw-bold text-uppercase tracking-wider text-white">FRANSALIAN</h5>
                         <small class="text-secondary tracking-widest text-uppercase" style="font-size: 0.65rem;">School Bombambili</small>
                     </div>
                 </div>
                 <p class="text-secondary small mb-4" style="line-height: 1.8;">
-                    Tunatoa elimu bora na malezi ya kiroho kwa vijana wetu. Jiunge nasi katika safari ya maarifa na mafanikio kwa mustakabali wa maisha yako.
+                    We provide quality education and spiritual nurturing for our youth. Join us on a journey of knowledge, growth, and excellence for a brighter future.
                 </p>
                 <div class="social-links d-flex gap-3">
                     <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
@@ -26,29 +26,29 @@
 
             <!-- Quick Links -->
             <div class="col-lg-2 col-md-6">
-                <h6 class="footer-title">Viungo Muhimu</h6>
+                <h6 class="footer-title">Quick Links</h6>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="{{ url('/') }}">Nyumbani</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ route('msfs') }}">MSFS</a></li>
-                    <li><a href="{{ route('admission') }}">Taarifa za Udahili</a></li>
-                    <li><a href="{{ route('contact') }}">Wasiliana Nasi</a></li>
+                    <li><a href="{{ route('admission') }}">Admissions</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>
 
             <!-- Services/Programs -->
             <div class="col-lg-2 col-md-6">
-                <h6 class="footer-title">Huduma Zetu</h6>
+                <h6 class="footer-title">Our Services</h6>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="#">Elimu ya Msingi</a></li>
-                    <li><a href="#">Malezi ya Kiroho</a></li>
-                    <li><a href="#">Michezo na Sanaa</a></li>
-                    <li><a href="#">Klabu za Kitaaluma</a></li>
+                    <li><a href="#">Primary Education</a></li>
+                    <li><a href="#">Spiritual Nurturing</a></li>
+                    <li><a href="#">Sports & Arts</a></li>
+                    <li><a href="#">Academic Clubs</a></li>
                 </ul>
             </div>
 
             <!-- Contact Info -->
             <div class="col-lg-2 col-md-6">
-                <h6 class="footer-title">Mawasiliano</h6>
+                <h6 class="footer-title">Contact Info</h6>
                 <div class="d-flex mb-3 align-items-start">
                     <i class="bi bi-geo-alt text-warning me-3 mt-1"></i>
                     <p class="text-secondary small mb-0">P.O. BOX 75652<br>Dar es Salaam</p>
@@ -69,7 +69,7 @@
 
             <!-- Location Map -->
             <div class="col-lg-3 col-md-6">
-                <h6 class="footer-title">Mahali Tulipo</h6>
+                <h6 class="footer-title">Our Location</h6>
                 <div class="rounded-3 overflow-hidden shadow-sm" style="border: 1px solid rgba(255,255,255,0.1);">
                     <iframe
                         src="https://maps.google.com/maps?q=Fransalian+School+Bombambili,+Dar+es+Salaam&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -92,14 +92,14 @@
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
                 <p class="text-secondary small mb-0">
-                    &copy; {{ date('Y') }} <span class="text-white fw-bold">Fransalian School Bombambili</span>. Haki zote zimehifadhiwa.
+                    &copy; {{ date('Y') }} <span class="text-white fw-bold">Fransalian School Bombambili</span>. All Rights Reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="#" class="text-secondary text-decoration-none small hover-warning">Vigezo na Masharti</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-secondary text-decoration-none small hover-warning">Terms & Conditions</a></li>
                     <li class="list-inline-item ms-3 text-secondary opacity-25">|</li>
-                    <li class="list-inline-item ms-3"><a href="#" class="text-secondary text-decoration-none small hover-warning">Sera ya Faragha</a></li>
+                    <li class="list-inline-item ms-3"><a href="#" class="text-secondary text-decoration-none small hover-warning">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
