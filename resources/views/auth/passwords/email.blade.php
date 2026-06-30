@@ -20,7 +20,7 @@
             <a href="{{ route('login') }}" class="btn-back">← LOGIN</a>
             
             <div class="auth-form-header">
-                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo animate__animated animate__zoomIn animate__delay-2s">
+                <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo animate__animated animate__zoomIn animate__delay-2s">
                 <h2>Reset Password</h2>
             </div>
 

@@ -7,7 +7,7 @@
         <!-- Sidebar (60%) -->
         <div class="auth-sidebar">
             <div>
-                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo mb-4" style="height: 75px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
+                <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo mb-4" style="height: 75px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
                 <div class="divider"></div>
                 <h1>Fransalian School Bombambili</h1>
                 <p>Primary Day School - Learning and Growing Together.</p>

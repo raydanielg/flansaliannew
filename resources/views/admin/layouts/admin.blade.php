@@ -233,7 +233,7 @@
 <body>
     <div class="admin-sidebar animate__animated animate__fadeInLeft">
         <div class="sidebar-brand">
-            <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="Logo">
+            <img src="{{ asset('logo.png') }}" alt="Logo">
             <div>
                 <h4>Fransalian Admin</h4>
                 <small>School Management</small>

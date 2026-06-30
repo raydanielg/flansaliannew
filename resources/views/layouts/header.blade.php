@@ -17,7 +17,7 @@
         <div class="row align-items-center">
             <!-- Logo -->
             <div class="col-md-auto text-center text-md-start mb-3 mb-md-0">
-                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo-lg" style="height: 100px; width: auto; max-width: 100%;">
+                <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo-lg" style="height: 100px; width: auto; max-width: 100%;">
             </div>
             
             <!-- Centered Text -->

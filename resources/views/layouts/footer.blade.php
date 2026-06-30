@@ -4,7 +4,7 @@
             <!-- Brand & Logo -->
             <div class="col-lg-4 col-md-6 pe-lg-5">
                 <div class="d-flex align-items-center mb-4">
-                    <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" 
+                    <img src="{{ asset('logo.png') }}" 
                          alt="School Logo" 
                          class="img-fluid me-3" 
                          style="max-height: 65px; filter: brightness(0) invert(1);">

@@ -22,7 +22,7 @@
             <a href="{{ url('/') }}" class="btn-back">— GO BACK</a>
             
             <div class="auth-form-header">
-                <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="School Logo" class="school-logo animate__animated animate__bounceIn animate__delay-2s">
+                <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo animate__animated animate__bounceIn animate__delay-2s">
                 <h2>Register</h2>
             </div>
 
