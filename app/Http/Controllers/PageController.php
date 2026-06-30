@@ -180,4 +180,94 @@ class PageController extends Controller
 
         return view('pages.gallery', compact('galleryImages', 'page'));
     }
+
+    public function sitemap()
+    {
+        $page = (object)[
+            'slug' => 'sitemap',
+            'title' => 'Sitemap',
+            'content' => 'Navigate through all the pages of our website.',
+        ];
+
+        $staticPages = [
+            ['name' => 'Home', 'route' => route('welcome'), 'icon' => 'house-door', 'desc' => 'Welcome page with overview of our school'],
+            ['name' => 'MSFS', 'route' => route('msfs'), 'icon' => 'people', 'desc' => 'Missionary Society of St. Francis de Sales'],
+            ['name' => 'Mission', 'route' => route('mission'), 'icon' => 'bullseye', 'desc' => 'Our school mission'],
+            ['name' => 'Vision', 'route' => route('vision'), 'icon' => 'eye', 'desc' => 'Our school vision'],
+            ['name' => 'Admission', 'route' => route('admission'), 'icon' => 'mortarboard', 'desc' => 'Admission process and requirements'],
+            ['name' => 'Apply Online', 'route' => route('apply'), 'icon' => 'clipboard-check', 'desc' => 'Submit an online application'],
+            ['name' => 'Fees', 'route' => route('fees'), 'icon' => 'cash-stack', 'desc' => 'School fees structure'],
+            ['name' => 'Gallery', 'route' => route('gallery'), 'icon' => 'images', 'desc' => 'Photos of school life and events'],
+            ['name' => 'News & Events', 'route' => route('news'), 'icon' => 'newspaper', 'desc' => 'Latest news and upcoming events'],
+            ['name' => 'Team', 'route' => route('team'), 'icon' => 'person-badge', 'desc' => 'Meet our dedicated staff'],
+            ['name' => "Parents' Portal", 'route' => route('portal'), 'icon' => 'person-lines-fill', 'desc' => 'Student portal for parents'],
+            ['name' => 'Feedback', 'route' => route('feedback'), 'icon' => 'chat-square-text', 'desc' => 'Share your feedback with us'],
+            ['name' => 'Help Desk', 'route' => route('help-desk'), 'icon' => 'question-circle', 'desc' => 'Frequently asked questions'],
+            ['name' => 'Contact Us', 'route' => route('contact'), 'icon' => 'envelope', 'desc' => 'Get in touch with us'],
+        ];
+
+        $newsItems = collect();
+        try {
+            $newsItems = News::where('is_active', true)
+                ->whereNotNull('published_at')
+                ->orderBy('published_at', 'desc')
+                ->get();
+        } catch (\Exception $e) {
+        }
+
+        return view('pages.sitemap', compact('page', 'staticPages', 'newsItems'));
+    }
+
+    public function sitemapXml()
+    {
+        $urls = [
+            ['loc' => route('welcome'), 'priority' => '1.0', 'changefreq' => 'daily'],
+            ['loc' => route('msfs'), 'priority' => '0.8', 'changefreq' => 'monthly'],
+            ['loc' => route('mission'), 'priority' => '0.8', 'changefreq' => 'monthly'],
+            ['loc' => route('vision'), 'priority' => '0.8', 'changefreq' => 'monthly'],
+            ['loc' => route('admission'), 'priority' => '0.9', 'changefreq' => 'monthly'],
+            ['loc' => route('apply'), 'priority' => '0.9', 'changefreq' => 'monthly'],
+            ['loc' => route('fees'), 'priority' => '0.7', 'changefreq' => 'monthly'],
+            ['loc' => route('gallery'), 'priority' => '0.7', 'changefreq' => 'weekly'],
+            ['loc' => route('news'), 'priority' => '0.9', 'changefreq' => 'weekly'],
+            ['loc' => route('team'), 'priority' => '0.6', 'changefreq' => 'monthly'],
+            ['loc' => route('portal'), 'priority' => '0.5', 'changefreq' => 'monthly'],
+            ['loc' => route('feedback'), 'priority' => '0.5', 'changefreq' => 'monthly'],
+            ['loc' => route('help-desk'), 'priority' => '0.6', 'changefreq' => 'monthly'],
+            ['loc' => route('contact'), 'priority' => '0.8', 'changefreq' => 'monthly'],
+            ['loc' => route('sitemap'), 'priority' => '0.3', 'changefreq' => 'monthly'],
+        ];
+
+        try {
+            $newsItems = News::where('is_active', true)
+                ->whereNotNull('published_at')
+                ->orderBy('published_at', 'desc')
+                ->get();
+            foreach ($newsItems as $item) {
+                $urls[] = [
+                    'loc' => route('news.show', $item->slug),
+                    'priority' => '0.7',
+                    'changefreq' => 'monthly',
+                    'lastmod' => $item->updated_at ? $item->updated_at->toDateString() : null,
+                ];
+            }
+        } catch (\Exception $e) {
+        }
+
+        $content = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        foreach ($urls as $url) {
+            $content .= "  <url>\n";
+            $content .= "    <loc>" . htmlspecialchars($url['loc']) . "</loc>\n";
+            if (isset($url['lastmod'])) {
+                $content .= "    <lastmod>" . $url['lastmod'] . "</lastmod>\n";
+            }
+            $content .= "    <changefreq>" . $url['changefreq'] . "</changefreq>\n";
+            $content .= "    <priority>" . $url['priority'] . "</priority>\n";
+            $content .= "  </url>\n";
+        }
+        $content .= '</urlset>';
+
+        return response($content, 200, ['Content-Type' => 'application/xml']);
+    }
 }

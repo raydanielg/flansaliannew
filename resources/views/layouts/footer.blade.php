@@ -32,6 +32,7 @@
                     <li><a href="{{ route('msfs') }}">MSFS</a></li>
                     <li><a href="{{ route('admission') }}">Admissions</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                 </ul>
             </div>
 
