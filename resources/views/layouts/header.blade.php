@@ -32,42 +32,30 @@
                 </div>
             </div>
 
-            <!-- Info Boxes -->
+            <!-- Info Items -->
             <div class="col-lg-7">
-                <div class="row g-2 justify-content-lg-end">
-                    <div class="col-md-4 col-6">
-                        <div class="d-flex align-items-center p-2 rounded-3 bg-primary-light h-100 info-box transition-hover">
-                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px; border: 2px solid #003366;">
-                                <i class="bi bi-book fs-5"></i>
-                            </div>
-                            <div>
-                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">State Syllabus</h6>
-                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">English Medium</p>
-                            </div>
+                <div class="d-flex flex-wrap justify-content-lg-end align-items-center gap-3 gap-lg-4">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-book text-primary me-2 fs-5"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">State Syllabus</span>
+                            <span class="text-muted" style="font-size: 0.75rem;">English Medium</span>
                         </div>
                     </div>
-                    <div class="col-md-4 col-6">
-                        <a href="tel:+255749770703" class="d-flex align-items-center p-2 rounded-3 bg-warning-light text-decoration-none h-100 info-box transition-hover">
-                            <div class="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px;">
-                                <i class="bi bi-telephone fs-5"></i>
-                            </div>
-                            <div>
-                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Call Us</h6>
-                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">+255 749 770 703</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-12">
-                        <a href="{{ route('admission') }}" class="d-flex align-items-center p-2 rounded-3 bg-success-light text-decoration-none h-100 info-box transition-hover">
-                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px;">
-                                <i class="bi bi-download fs-5"></i>
-                            </div>
-                            <div>
-                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Download</h6>
-                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">Prospectus / Admission</p>
-                            </div>
-                        </a>
-                    </div>
+                    <a href="tel:+255749770703" class="d-flex align-items-center text-decoration-none text-reset">
+                        <i class="bi bi-telephone text-warning me-2 fs-5"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">Call Us</span>
+                            <span class="text-muted" style="font-size: 0.75rem;">+255 749 770 703</span>
+                        </div>
+                    </a>
+                    <a href="mailto:info@fransalian.ac.tz" class="d-flex align-items-center text-decoration-none text-reset">
+                        <i class="bi bi-envelope text-success me-2 fs-5"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">Email Us</span>
+                            <span class="text-muted" style="font-size: 0.75rem;">info@fransalian.ac.tz</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
