@@ -23,7 +23,7 @@
             <!-- Centered Text -->
             <div class="col-md text-center text-md-start ps-md-4">
                 <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.5rem, 5vw, 2.8rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL BOMBAMBILI</h1>
-                <p class="mb-0 text-secondary fw-bold fs-5">Pre & Primary School - Bomba-Mbili, Dar es Salaam</p>
+                <p class="mb-0 text-secondary fw-bold fs-5">Pre & Primary School - Bombambili, Dar es Salaam</p>
                 <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.95rem;">Learning and Growing Together</p>
             </div>
         </div>
