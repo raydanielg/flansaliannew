@@ -91,3 +91,5 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
+Route::get('/sitemap', [PageController::class, 'sitemap'])->name('sitemap');
+Route::get('/sitemap.xml', [PageController::class, 'sitemapXml']);
