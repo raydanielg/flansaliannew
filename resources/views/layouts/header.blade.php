@@ -191,11 +191,20 @@
     .transition-hover { transition: all 0.3s ease; }
 
     @media (max-width: 992px) {
-        .school-name-main { font-size: 1.8rem !important; }
+        .school-name-main { font-size: 1.5rem !important; }
     }
 
     @media (max-width: 768px) {
-        .school-name-main { font-size: 1.4rem !important; }
-        .school-logo-lg { height: 60px !important; }
+        .school-name-main { font-size: 1.1rem !important; }
+        .school-logo-lg { height: 50px !important; }
+        .main-header { padding-top: 10px !important; padding-bottom: 10px !important; }
+        .main-header .border-start { border: none !important; padding-left: 0 !important; margin-left: 0 !important; }
+    }
+
+    @media (max-width: 576px) {
+        .school-name-main { font-size: 0.95rem !important; }
+        .school-logo-lg { height: 42px !important; }
+        .main-header .small { font-size: 0.7rem !important; }
+        .main-header .fst-italic { font-size: 0.7rem !important; }
     }
 </style>
