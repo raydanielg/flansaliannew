@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('meta_title', $newsItem->title . ' | Fransalian School News')
+@section('meta_description', Str::limit(strip_tags($newsItem->content), 160))
+@section('meta_keywords', 'Fransalian School news, ' . $newsItem->title . ', school events, Dar es Salaam')
+@section('og_type', 'article')
+@section('og_title', $newsItem->title . ' | Fransalian School')
+@section('og_description', Str::limit(strip_tags($newsItem->content), 160))
+@if($newsItem->image)
+@section('og_image', asset('storage/' . $newsItem->image))
+@endif
+
 @section('content')
     @include('layouts.header')
 
@@ -51,16 +61,26 @@
                                 <a href="{{ route('news') }}" class="btn btn-outline-primary rounded-pill fw-bold px-4">
                                     <i class="bi bi-arrow-left-circle me-2"></i> Back to News
                                 </a>
-                                <div class="d-flex gap-2">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="text-muted small fw-bold me-2">Share:</span>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center share-btn" style="width: 40px; height: 40px;" title="Share on Facebook">
                                         <i class="bi bi-facebook"></i>
                                     </a>
-                                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($newsItem->title) }}" target="_blank" class="btn btn-info rounded-circle d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
+                                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($newsItem->title) }}" target="_blank" class="btn btn-info rounded-circle d-flex align-items-center justify-content-center text-white share-btn" style="width: 40px; height: 40px;" title="Share on Twitter">
                                         <i class="bi bi-twitter"></i>
                                     </a>
-                                    <a href="https://wa.me/?text={{ urlencode($newsItem->title . ' ' . request()->url()) }}" target="_blank" class="btn btn-success rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <a href="https://wa.me/?text={{ urlencode($newsItem->title . ' ' . request()->url()) }}" target="_blank" class="btn btn-success rounded-circle d-flex align-items-center justify-content-center share-btn" style="width: 40px; height: 40px;" title="Share on WhatsApp">
                                         <i class="bi bi-whatsapp"></i>
                                     </a>
+                                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->url()) }}" target="_blank" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center share-btn" style="width: 40px; height: 40px; background-color: #0077b5; border-color: #0077b5;" title="Share on LinkedIn">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a href="mailto:?subject={{ urlencode($newsItem->title) }}&body={{ urlencode(request()->url()) }}" class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center share-btn" style="width: 40px; height: 40px;" title="Share via Email">
+                                        <i class="bi bi-envelope"></i>
+                                    </a>
+                                    <button onclick="copyLink()" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center share-btn" style="width: 40px; height: 40px;" title="Copy Link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -69,4 +89,12 @@
             </div>
         </div>
     </section>
+
+    <script>
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            alert('Link copied to clipboard!');
+        });
+    }
+    </script>
 @endsection

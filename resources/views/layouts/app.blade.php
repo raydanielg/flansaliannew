@@ -7,7 +7,54 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('meta_title', 'Fransalian School | Pre & Primary School - Dar es Salaam')</title>
+    <meta name="description" content="@yield('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2026-27.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Fransalian School, Dar es Salaam, primary school, pre school, English medium, MSFS, Catholic school, admission, Bombambili, Gongo la Mboto')">
+    <meta name="author" content="Fransalian School">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@yield('canonical_url', url()->current())">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="@yield('og_url', url()->current())">
+    <meta property="og:title" content="@yield('og_title', 'Fransalian School | Pre & Primary School - Dar es Salaam')">
+    <meta property="og:description" content="@yield('og_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service.')">
+    <meta property="og:image" content="@yield('og_image', asset('images/jengofarasaian.png'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Fransalian School">
+    <meta property="og:locale" content="en_TZ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Fransalian School | Pre & Primary School - Dar es Salaam')">
+    <meta name="twitter:description" content="@yield('og_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/jengofarasaian.png'))">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "School",
+        "name": "Fransalian School",
+        "description": "Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service.",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('logo.png') }}",
+        "image": "{{ asset('images/jengofarasaian.png') }}",
+        "telephone": "+255749770703",
+        "email": "info@fransalian.ac.tz",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bombambili, Gongo la Mboto",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "TZ"
+        }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

@@ -23,11 +23,11 @@
                     <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase" style="font-size: clamp(1rem, 2.5vw, 1.4rem); letter-spacing: 0.15em;">Welcome to Fransalian School</p>
                     <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
                     <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Rooted in values. Driven by excellence. Committed to holistic growth.</p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                    <div class="d-inline-flex flex-wrap justify-content-center gap-3">
+                        <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg hero-btn-primary" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
                             <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
                         </a>
-                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold">
+                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold hero-btn-outline">
                             <i class="bi bi-telephone-fill me-2"></i> Contact Us
                         </a>
                     </div>
@@ -233,44 +233,45 @@
     <!-- Gallery Section -->
     <section class="py-5 bg-light overflow-hidden">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Environment</h6>
-                <h2 class="display-5 fw-bold mb-0 text-dark">School <span class="text-primary">Gallery</span></h2>
-                <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">Explore moments from our school life, events, and achievements.</p>
-            </div>
-            @php
-                $galleryImages = collect();
-                try {
-                    $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->take(8)->get();
-                } catch (\Exception $e) {
-                    $galleryImages = collect();
-                }
-            @endphp
-            <div class="row g-4">
-                @forelse($galleryImages as $index => $gImg)
-                <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn {{ $index > 0 ? 'animate__delay-' . min($index, 3) . 's' : '' }}">
-                    <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative" style="cursor: pointer;" onclick="openLightbox('{{ asset('storage/' . $gImg->image) }}', '{{ $gImg->title }}')">
-                        <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }}" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none'">
-                        <div class="gallery-overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-end p-4 text-white" style="background: linear-gradient(transparent 40%, rgba(0,26,51,0.85)); opacity: 0; transition: opacity 0.3s ease;">
-                            <h6 class="fw-bold mb-1">{{ $gImg->title }}</h6>
-                            <small class="opacity-75"><i class="bi bi-tag me-1"></i>{{ $gImg->category }}</small>
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6 scroll-reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Environment</h6>
+                    <h2 class="display-5 fw-bold mb-0 text-dark">School <span class="text-primary">Gallery</span></h2>
+                    <p class="text-muted mt-3" style="line-height: 1.8;">Explore moments from our school life, events, and achievements. Our gallery showcases the vibrant learning environment and joyful experiences our students enjoy every day.</p>
+                    <a href="{{ route('gallery') }}" class="btn btn-primary rounded-pill px-4 fw-bold mt-3">
+                        <i class="bi bi-images me-2"></i>View Full Gallery
+                    </a>
+                </div>
+                <div class="col-lg-6 scroll-reveal" style="transition-delay: 0.2s;">
+                    @php
+                        $galleryImages = collect();
+                        try {
+                            $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->take(6)->get();
+                        } catch (\Exception $e) {
+                            $galleryImages = collect();
+                        }
+                    @endphp
+                    @if($galleryImages->count() > 0)
+                    <div class="row g-2">
+                        @foreach($galleryImages as $i => $gImg)
+                        <div class="col-6 {{ $i == 0 ? 'col-12' : '' }}">
+                            <div class="gallery-item rounded-4 overflow-hidden shadow-sm position-relative" style="cursor: pointer; height: {{ $i == 0 ? '200px' : '120px' }};" onclick="openLightbox('{{ asset('storage/' . $gImg->image) }}', '{{ $gImg->title }}')">
+                                <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }}" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.parentElement.style.display='none'">
+                                <div class="gallery-overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-end p-3 text-white" style="background: linear-gradient(transparent 40%, rgba(0,26,51,0.85)); opacity: 0; transition: opacity 0.3s ease;">
+                                    <h6 class="fw-bold mb-0 small">{{ $gImg->title }}</h6>
+                                </div>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
+                    @else
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-images fs-1 d-block mb-3 opacity-25"></i>
+                        <p>No gallery images yet.</p>
+                    </div>
+                    @endif
                 </div>
-                @empty
-                <div class="col-12 text-center text-muted py-5">
-                    <i class="bi bi-images fs-1 d-block mb-3 opacity-25"></i>
-                    <p>No gallery images yet.</p>
-                </div>
-                @endforelse
             </div>
-            @if($galleryImages->count() > 0)
-            <div class="text-center mt-5">
-                <a href="{{ route('gallery') }}" class="btn btn-primary rounded-pill px-5 fw-bold">
-                    <i class="bi bi-images me-2"></i>View Full Gallery
-                </a>
-            </div>
-            @endif
         </div>
     </section>
 
@@ -296,20 +297,20 @@
     </script>
 
     <!-- FAQ Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-light overflow-hidden">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-5">
+                <div class="col-lg-5 scroll-reveal">
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Common Questions</h6>
                     <h2 class="display-5 fw-bold mb-4 text-dark">Frequently Asked <span class="text-primary">Questions</span></h2>
-                    <p class="text-muted mb-5">Find quick answers to common questions about our school, admissions, and policies.</p>
-                    <div class="p-4 rounded-5 bg-primary-light border-start border-5 border-primary" style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                    <p class="text-muted mb-4" style="line-height: 1.8;">Find quick answers to common questions about our school, admissions, and policies.</p>
+                    <div class="p-4 rounded-4 bg-primary-light border-start border-5 border-primary" style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
                         <h6 class="fw-bold mb-2 text-dark">Still have questions?</h6>
                         <p class="small text-muted mb-3">We are here to help you understand everything about our community.</p>
                         <a href="{{ route('contact') }}" class="btn btn-primary btn-sm px-4 rounded-pill fw-bold">CONTACT US</a>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 scroll-reveal" style="transition-delay: 0.2s;">
                     <div class="accordion accordion-flush custom-accordion" id="landingFaq">
                         @php
                             $landingFaqs = \App\Models\HelpDesk::orderBy('order', 'asc')->take(5)->get();
@@ -335,38 +336,52 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Why Choose Us</h6>
-                <h2 class="display-5 fw-bold text-dark">Our Key <span class="text-primary">Strengths</span></h2>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4 animate__animated animate__fadeInUp">
-                    <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center">
-                        <div class="icon-box bg-primary-light text-primary rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                            <i class="bi bi-book-half fs-2"></i>
-                        </div>
-                        <h5 class="fw-bold mb-3">Academic Excellence</h5>
-                        <p class="text-muted small mb-0">We offer a rigorous curriculum designed to inspire curiosity and critical thinking in every student.</p>
-                    </div>
+    <section class="py-5 bg-white overflow-hidden">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 scroll-reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Why Choose Us</h6>
+                    <h2 class="display-5 fw-bold text-dark mb-4">Our Key <span class="text-primary">Strengths</span></h2>
+                    <p class="text-muted mb-0" style="line-height: 1.8;">At Fransalian School, we combine academic rigor with spiritual nurturing to create well-rounded individuals ready to face the challenges of tomorrow.</p>
                 </div>
-                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center">
-                        <div class="icon-box bg-warning-light text-warning rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                            <i class="bi bi-heart-pulse fs-2"></i>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-md-6 scroll-reveal">
+                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-primary-light text-primary rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-book-half fs-3"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="color: #003366;">Academic Excellence</h5>
+                                <p class="text-muted small mb-0">A rigorous curriculum designed to inspire curiosity and critical thinking.</p>
+                            </div>
                         </div>
-                        <h5 class="fw-bold mb-3">Spiritual Growth</h5>
-                        <p class="text-muted small mb-0">Grounded in MSFS values, we nurture the character and spiritual well-being of our school community.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
-                    <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center">
-                        <div class="icon-box bg-success-light text-success rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                            <i class="bi bi-people fs-2"></i>
+                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.15s;">
+                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-warning-light text-warning rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-heart-pulse fs-3"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="color: #003366;">Spiritual Growth</h5>
+                                <p class="text-muted small mb-0">Grounded in MSFS values, nurturing character and spiritual well-being.</p>
+                            </div>
                         </div>
-                        <h5 class="fw-bold mb-3">Inclusive Community</h5>
-                        <p class="text-muted small mb-0">A welcoming environment where every child feels valued, respected, and part of a larger family.</p>
+                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.3s;">
+                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-success-light text-success rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-people fs-3"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="color: #003366;">Inclusive Community</h5>
+                                <p class="text-muted small mb-0">A welcoming environment where every child feels valued and respected.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.45s;">
+                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-info-light text-info rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-lightbulb fs-3"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="color: #003366;">Activity-Based Learning</h5>
+                                <p class="text-muted small mb-0">Hands-on approach that makes learning engaging, fun, and memorable.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -374,112 +389,114 @@
     </section>
 
     <!-- Community Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-light overflow-hidden">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Team</h6>
-                <h2 class="display-5 fw-bold text-dark">Dedicated <span class="text-primary">Staff</span></h2>
-            </div>
-            <div class="row g-4">
-                @php
-                    $staff = collect();
-                    try {
-                        $staff = \App\Models\Team::where('is_active', true)->orderBy('order')->take(4)->get();
-                    } catch (\Exception $e) {
-                        $staff = collect();
-                    }
-                @endphp
-                @forelse($staff as $member)
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center p-4 h-100 transition-hover staff-card">
-                        <div class="mb-3 position-relative d-inline-block mx-auto">
-                            @if($member->photo)
-                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #f8f9fa;">
-                            @else
-                            <div class="rounded-circle shadow-sm d-flex align-items-center justify-content-center fw-bold text-white" style="width: 100px; height: 100px; background: var(--primary-blue); font-size: 2.5rem; border: 3px solid #f8f9fa;">
-                                {{ strtoupper(substr($member->name, 0, 1)) }}
+            <div class="row g-5 align-items-center mb-4">
+                <div class="col-lg-6 scroll-reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Team</h6>
+                    <h2 class="display-5 fw-bold text-dark">Dedicated <span class="text-primary">Staff</span></h2>
+                    <p class="text-muted mt-3" style="line-height: 1.8;">Meet the passionate educators who make Fransalian School a place of growth, learning, and joy. Our team is committed to nurturing every child's potential.</p>
+                    <a href="{{ route('team') }}" class="btn btn-primary rounded-pill px-4 fw-bold mt-3">
+                        <i class="bi bi-people me-2"></i>View All Staff
+                    </a>
+                </div>
+                <div class="col-lg-6 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="row g-3">
+                        @php
+                            $staff = collect();
+                            try {
+                                $staff = \App\Models\Team::where('is_active', true)->orderBy('order')->take(4)->get();
+                            } catch (\Exception $e) {
+                                $staff = collect();
+                            }
+                        @endphp
+                        @forelse($staff as $member)
+                        <div class="col-6">
+                            <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center p-3 h-100 transition-hover staff-card">
+                                <div class="mb-2 position-relative d-inline-block mx-auto">
+                                    @if($member->photo)
+                                    <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="rounded-circle shadow-sm" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #f8f9fa;">
+                                    @else
+                                    <div class="rounded-circle shadow-sm d-flex align-items-center justify-content-center fw-bold text-white" style="width: 80px; height: 80px; background: #003366; font-size: 2rem; border: 3px solid #f8f9fa;">
+                                        {{ strtoupper(substr($member->name, 0, 1)) }}
+                                    </div>
+                                    @endif
+                                </div>
+                                <h6 class="fw-bold mb-1 text-dark small">{{ $member->name }}</h6>
+                                <p class="text-primary small fw-bold text-uppercase mb-0" style="font-size: 0.7rem;">{{ $member->position }}</p>
                             </div>
-                            @endif
                         </div>
-                        <h5 class="fw-bold mb-1 text-dark">{{ $member->name }}</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3 tracking-wider">{{ $member->position }}</p>
-                        <p class="text-muted small mb-0">{{ Str::limit($member->bio ?? 'Committed to excellence in education.', 80) }}</p>
+                        @empty
+                        <div class="col-12 text-center text-muted py-4">
+                            <i class="bi bi-people fs-1 d-block mb-2 opacity-25"></i>
+                            <p class="mb-0">No team members added yet.</p>
+                        </div>
+                        @endforelse
                     </div>
                 </div>
-                @empty
-                <div class="col-12 text-center text-muted py-5">
-                    <i class="bi bi-people fs-1 d-block mb-3 opacity-25"></i>
-                    <p>No team members added yet.</p>
-                </div>
-                @endforelse
             </div>
         </div>
     </section>
 
     <!-- Latest News & Events Section -->
-    <section class="py-5 bg-light overflow-hidden">
+    <section class="py-5 bg-white overflow-hidden">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Stay Updated</h6>
-                <h2 class="display-5 fw-bold text-dark">Latest News & <span class="text-primary">Events</span></h2>
-                <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">Catch up with the latest stories, activities, and announcements from our school community.</p>
-            </div>
-            @php
-                $latestNews = collect();
-                try {
-                    $latestNews = \App\Models\News::where('is_active', true)
-                        ->whereNotNull('published_at')
-                        ->orderBy('published_at', 'desc')
-                        ->take(3)
-                        ->get();
-                } catch (\Exception $e) {
-                    $latestNews = collect();
-                }
-            @endphp
-            <div class="row g-4">
-                @forelse($latestNews as $index => $item)
-                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp {{ $index > 0 ? 'animate__delay-' . min($index, 2) . 's' : '' }}">
-                    <div class="card border-0 shadow-lg h-100 overflow-hidden landing-news-card" style="border-radius: 20px; background: #fff;">
-                        <div class="position-relative overflow-hidden" style="height: 220px;">
-                            @if($item->image)
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-100 h-100 landing-news-img" style="object-fit: cover;">
-                            @else
-                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
-                                <i class="bi bi-newspaper fs-1 text-primary opacity-50"></i>
-                            </div>
-                            @endif
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                                    {{ \Carbon\Carbon::parse($item->published_at)->format('M d, Y') }}
-                                </span>
+            <div class="row g-5 align-items-center mb-4">
+                <div class="col-lg-6 scroll-reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Stay Updated</h6>
+                    <h2 class="display-5 fw-bold text-dark">Latest News & <span class="text-primary">Events</span></h2>
+                    <p class="text-muted mt-3" style="line-height: 1.8;">Catch up with the latest stories, activities, and announcements from our school community. Stay connected with everything happening at Fransalian School.</p>
+                    <a href="{{ route('news') }}" class="btn btn-primary rounded-pill px-4 fw-bold mt-3">
+                        <i class="bi bi-newspaper me-2"></i>View All News
+                    </a>
+                </div>
+                <div class="col-lg-6 scroll-reveal" style="transition-delay: 0.2s;">
+                    @php
+                        $latestNews = collect();
+                        try {
+                            $latestNews = \App\Models\News::where('is_active', true)
+                                ->whereNotNull('published_at')
+                                ->orderBy('published_at', 'desc')
+                                ->take(2)
+                                ->get();
+                        } catch (\Exception $e) {
+                            $latestNews = collect();
+                        }
+                    @endphp
+                    @if($latestNews->count() > 0)
+                    <div class="row g-3">
+                        @foreach($latestNews as $item)
+                        <div class="col-12">
+                            <div class="card border-0 shadow-lg overflow-hidden landing-news-card" style="border-radius: 16px; background: #fff;">
+                                <div class="row g-0 h-100">
+                                    <div class="col-4 position-relative overflow-hidden" style="min-height: 140px;">
+                                        @if($item->image)
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-100 h-100 landing-news-img" style="object-fit: cover;">
+                                        @else
+                                        <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
+                                            <i class="bi bi-newspaper fs-1 text-primary opacity-50"></i>
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="col-8 p-3 d-flex flex-column">
+                                        <span class="badge bg-warning text-dark fw-bold px-2 py-1 rounded-pill align-self-start mb-2" style="font-size: 0.7rem;">{{ \Carbon\Carbon::parse($item->published_at)->format('M d, Y') }}</span>
+                                        <h6 class="fw-bold mb-1" style="color: #003366; font-size: 0.9rem;">{{ Str::limit($item->title, 50) }}</h6>
+                                        <p class="text-muted small mb-2 flex-grow-1" style="line-height: 1.5;">{{ Str::limit(strip_tags($item->content), 70) }}</p>
+                                        <a href="{{ route('news.show', $item->slug) }}" class="text-primary text-decoration-none fw-bold small">Read More <i class="bi bi-arrow-right ms-1"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body p-4 d-flex flex-column">
-                            <h5 class="fw-bold mb-3" style="color: #003366;">{{ $item->title }}</h5>
-                            <p class="text-muted flex-grow-1" style="line-height: 1.7;">{{ Str::limit(strip_tags($item->content), 100) }}</p>
-                            <a href="{{ route('news.show', $item->slug) }}" class="btn btn-outline-primary rounded-pill fw-bold mt-3 align-self-start">
-                                Read More <i class="bi bi-arrow-right-circle ms-2"></i>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
-                </div>
-                @empty
-                <div class="col-12 text-center py-5">
-                    <div class="card border-0 shadow-sm rounded-4 p-5 bg-white">
-                        <i class="bi bi-newspaper fs-1 text-muted mb-3"></i>
-                        <h4 class="text-muted">No news or events yet</h4>
-                        <p class="text-muted">Check back soon for updates from Fransalian School.</p>
+                    @else
+                    <div class="text-center text-muted py-4">
+                        <i class="bi bi-newspaper fs-1 d-block mb-2 opacity-25"></i>
+                        <p class="mb-0">No news or events yet.</p>
                     </div>
+                    @endif
                 </div>
-                @endforelse
             </div>
-            @if($latestNews->count() > 0)
-            <div class="text-center mt-5">
-                <a href="{{ route('news') }}" class="btn btn-primary rounded-pill px-5 fw-bold">
-                    <i class="bi bi-newspaper me-2"></i>View All News & Events
-                </a>
-            </div>
-            @endif
         </div>
     </section>
 
@@ -493,18 +510,49 @@
         .btn-primary:hover { background-color: #002244; border-color: #002244; }
         .bg-primary { background-color: var(--primary-blue) !important; }
         
-        .staff-card { border-bottom: 4px solid transparent !important; }
+        .hero-btn-primary { transition: all 0.3s ease; }
+        .hero-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4) !important; }
+        .hero-btn-outline { transition: all 0.3s ease; }
+        .hero-btn-outline:hover { transform: translateY(-3px); background-color: white; color: #003366 !important; }
+
+        .staff-card { border-bottom: 4px solid transparent !important; transition: all 0.3s ease; }
         .staff-card:hover { 
             border-bottom: 4px solid var(--primary-blue) !important;
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.1) !important; }
         .tracking-wider { letter-spacing: 0.1em; }
         .landing-news-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .landing-news-card:hover { transform: translateY(-10px); box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.15) !important; }
+        .landing-news-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.12) !important; }
         .landing-news-img { transition: transform 0.5s ease; }
-        .landing-news-card:hover .landing-news-img { transform: scale(1.1); }
+        .landing-news-card:hover .landing-news-img { transform: scale(1.08); }
         .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
+        .bg-info-light { background-color: rgba(13, 202, 240, 0.08); }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
+
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
 
     <!-- Admission CTA Section -->
     <section class="py-5 bg-white overflow-hidden">

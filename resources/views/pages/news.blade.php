@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'News & Events | Fransalian School')
+@section('meta_description', 'Latest news, events, and announcements from Fransalian School Bombambili, Dar es Salaam. Stay updated with school activities and happenings.')
+@section('og_title', 'News & Events | Fransalian School')
+@section('og_description', 'Latest news, events, and announcements from Fransalian School Bombambili, Dar es Salaam.')
+
 @section('content')
     @include('layouts.header')
 

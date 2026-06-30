@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Contact Us | Fransalian School')
+@section('meta_description', 'Contact Fransalian School Bombambili, Dar es Salaam. Call +255 749 770 703 or email info@fransalian.ac.tz for admissions and enquiries.')
+@section('og_title', 'Contact Us | Fransalian School')
+@section('og_description', 'Contact Fransalian School Bombambili, Dar es Salaam for admissions and enquiries.')
+
 @section('content')
     @include('layouts.header')
 
