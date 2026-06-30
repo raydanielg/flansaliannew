@@ -14,17 +14,61 @@
 
 <header class="main-header py-3 bg-white border-bottom shadow-sm">
     <div class="container">
-        <div class="row align-items-center">
-            <!-- Logo -->
-            <div class="col-md-auto text-center text-md-start mb-3 mb-md-0">
-                <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo-lg" style="height: 100px; width: auto; max-width: 100%;">
+        <div class="row align-items-center g-3">
+            <!-- Logo & School Name -->
+            <div class="col-lg-5 d-flex align-items-center">
+                <a href="{{ route('welcome') }}" class="d-flex align-items-center text-decoration-none">
+                    <img src="{{ asset('logo.png') }}" alt="School Logo" class="school-logo-lg" style="height: 90px; width: auto; max-width: 100%;">
+                </a>
+                <div class="ms-3 ps-3 border-start" style="border-color: #e0e0e0 !important;">
+                    <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL</h1>
+                    <p class="mb-1 text-secondary fw-bold small">Pre & Primary School</p>
+                    <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.85rem;">Bombambili, Dar es Salaam</p>
+                    <ul class="list-inline mb-0 mt-1">
+                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Knowledge</li>
+                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Love</li>
+                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Service</li>
+                    </ul>
+                </div>
             </div>
-            
-            <!-- Centered Text -->
-            <div class="col-md text-center text-md-start ps-md-4">
-                <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.5rem, 5vw, 2.8rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL</h1>
-                <p class="mb-0 text-secondary fw-bold fs-5">Pre & Primary School - Bombambili, Dar es Salaam</p>
-                <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.95rem;">Learning and Growing Together</p>
+
+            <!-- Info Boxes -->
+            <div class="col-lg-7">
+                <div class="row g-2 justify-content-lg-end">
+                    <div class="col-md-4 col-6">
+                        <div class="d-flex align-items-center p-2 rounded-3 bg-primary-light h-100 info-box transition-hover">
+                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px; border: 2px solid #003366;">
+                                <i class="bi bi-book fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">State Syllabus</h6>
+                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">English Medium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="tel:+255749770703" class="d-flex align-items-center p-2 rounded-3 bg-warning-light text-decoration-none h-100 info-box transition-hover">
+                            <div class="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px;">
+                                <i class="bi bi-telephone fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Call Us</h6>
+                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">+255 749 770 703</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <a href="{{ route('admission') }}" class="d-flex align-items-center p-2 rounded-3 bg-success-light text-decoration-none h-100 info-box transition-hover">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0 shadow-sm" style="width: 44px; height: 44px;">
+                                <i class="bi bi-download fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.85rem;">Download</h6>
+                                <p class="mb-0 text-muted" style="font-size: 0.75rem;">Prospectus / Admission</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -45,6 +89,7 @@
                 <li class="nav-item"><a href="{{ route('admission') }}" class="nav-link {{ Request::is('admission') ? 'active' : '' }}">ADMISSION</a></li>
                 <li class="nav-item"><a href="{{ route('fees') }}" class="nav-link {{ Request::is('fees') ? 'active' : '' }}">FEES</a></li>
                 <li class="nav-item"><a href="{{ route('gallery') }}" class="nav-link {{ Request::is('gallery') ? 'active' : '' }}">GALLERY</a></li>
+                <li class="nav-item"><a href="{{ route('news') }}" class="nav-link {{ Request::is('news') ? 'active' : '' }}">NEWS</a></li>
                 <li class="nav-item"><a href="{{ route('team') }}" class="nav-link {{ Request::is('team') ? 'active' : '' }}">TEAM</a></li>
                 <li class="nav-item"><a href="{{ route('portal') }}" class="nav-link {{ Request::is('portal') ? 'active' : '' }}">PARENTS' PORTAL</a></li>
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">CONTACT US</a></li>
@@ -116,6 +161,11 @@
     .bg-white-10 { background-color: rgba(255,255,255,0.1); }
     .tracking-widest { letter-spacing: 0.2rem; }
     .hover-warning:hover { color: var(--accent-yellow) !important; }
+    .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
+    .bg-warning-light { background-color: rgba(255, 193, 7, 0.12); }
+    .bg-success-light { background-color: rgba(25, 135, 84, 0.08); }
+    .info-box:hover { transform: translateY(-3px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08); }
+    .transition-hover { transition: all 0.3s ease; }
 
     @media (max-width: 992px) {
         .school-name-main { font-size: 1.8rem !important; }
