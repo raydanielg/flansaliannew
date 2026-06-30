@@ -27,8 +27,8 @@
                 </div>
             </div>
 
-            <!-- Info Items -->
-            <div class="col-lg-7">
+            <!-- Info Items (Desktop) -->
+            <div class="col-lg-7 d-none d-lg-block">
                 <div class="d-flex flex-wrap justify-content-lg-end align-items-center gap-3 gap-lg-4">
                     <div class="d-flex align-items-center">
                         <i class="bi bi-book text-primary me-2 fs-5"></i>
@@ -49,6 +49,46 @@
                         <div>
                             <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">Email Us</span>
                             <span class="text-muted" style="font-size: 0.75rem;">info@fransalian.ac.tz</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Info Toggle Button (Mobile) -->
+            <div class="col-12 d-lg-none">
+                <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mobileInfoBar" aria-expanded="false" aria-controls="mobileInfoBar">
+                    <i class="bi bi-info-circle me-2"></i>School Info
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Info Sidebar -->
+        <div class="collapse d-lg-none" id="mobileInfoBar">
+            <div class="row g-2 pt-3">
+                <div class="col-12">
+                    <div class="d-flex align-items-center p-3 rounded-3 bg-primary-light">
+                        <i class="bi bi-book text-primary me-3 fs-4"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.9rem;">English Medium</span>
+                            <span class="text-muted" style="font-size: 0.8rem;">State Syllabus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <a href="tel:+255749770703" class="d-flex align-items-center p-3 rounded-3 bg-warning-light text-decoration-none text-reset h-100">
+                        <i class="bi bi-telephone text-warning me-3 fs-4"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.9rem;">Call Us</span>
+                            <span class="text-muted" style="font-size: 0.8rem;">+255 749 770 703</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="mailto:info@fransalian.ac.tz" class="d-flex align-items-center p-3 rounded-3 bg-success-light text-decoration-none text-reset h-100">
+                        <i class="bi bi-envelope text-success me-3 fs-4"></i>
+                        <div>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.9rem;">Email Us</span>
+                            <span class="text-muted" style="font-size: 0.8rem;">info@fransalian.ac.tz</span>
                         </div>
                     </a>
                 </div>
