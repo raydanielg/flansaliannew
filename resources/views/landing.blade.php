@@ -4,8 +4,20 @@
     @include('layouts.header')
 
     <!-- Hero Section -->
-    <section class="position-relative overflow-hidden text-white d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
+    <section class="position-relative overflow-hidden text-white d-flex align-items-center" style="min-height: 90vh;">
+        <!-- Background Slideshow -->
+        <div class="hero-slideshow">
+            <div class="hero-slide-bg active" style="background-image: url('{{ asset('images/jengofarasaian.png') }}');"></div>
+            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/watoto.png') }}');"></div>
+            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/picwatoto2.png') }}');"></div>
+            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/picwatoto3.png') }}');"></div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)); z-index: 1;"></div>
+
+        <!-- Content -->
+        <div class="container position-relative" style="z-index: 2; padding-top: 100px; padding-bottom: 100px;">
             <div class="row justify-content-center">
                 <div class="col-lg-9 text-center">
                     <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase small">Welcome to Fransalian School</p>
@@ -23,10 +35,8 @@
             </div>
         </div>
         
-        <!-- Wave Shape -->
-        <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 1;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f4f7f6" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-        </div>
+        <!-- Simple Bottom Divider -->
+        <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 2; height: 6px; background: linear-gradient(90deg, #ffd700, #ffed4a, #ffd700);"></div>
     </section>
 
     <!-- Marquee Announcement Bar -->
@@ -99,7 +109,49 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            transform: scale(1);
+        }
+        .hero-slide-bg.active {
+            opacity: 1;
+            animation: kenBurns 8s ease-in-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
     </style>
+
+    <script>
+        (function() {
+            const bgSlides = document.querySelectorAll('.hero-slide-bg');
+            if (bgSlides.length > 1) {
+                let currentBg = 0;
+                setInterval(() => {
+                    bgSlides[currentBg].classList.remove('active');
+                    currentBg = (currentBg + 1) % bgSlides.length;
+                    bgSlides[currentBg].classList.add('active');
+                }, 5000);
+            }
+        })();
+    </script>
 
     <!-- Welcome / About Section -->
     <section class="py-5 bg-white overflow-hidden">
