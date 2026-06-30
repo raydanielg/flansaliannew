@@ -20,7 +20,7 @@
         <div class="container position-relative" style="z-index: 2; padding-top: 100px; padding-bottom: 100px;">
             <div class="row justify-content-center">
                 <div class="col-lg-9 text-center">
-                    <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase small">Welcome to Fransalian School</p>
+                    <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase" style="font-size: clamp(1rem, 2.5vw, 1.4rem); letter-spacing: 0.15em;">Welcome to Fransalian School</p>
                     <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
                     <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Rooted in values. Driven by excellence. Committed to holistic growth.</p>
                     <div class="d-flex flex-wrap justify-content-center gap-3">
