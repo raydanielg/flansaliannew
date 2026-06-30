@@ -144,58 +144,52 @@
         })();
     </script>
 
-    <!-- About Section -->
-    <section class="py-5 bg-white">
+    <!-- Welcome / About Section -->
+    <section class="py-5 bg-white overflow-hidden">
         <div class="container py-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <div class="position-relative">
-                        <img src="{{ asset('cropped-unnamed-8.jpg') }}" alt="About Fransalian" class="img-fluid rounded-5 shadow-lg">
-                        <div class="position-absolute bottom-0 end-0 bg-warning p-4 rounded-4 shadow-lg mb-n3 me-n3 d-none d-md-block">
-                            <h3 class="fw-bold mb-0 text-dark">Since 1838</h3>
-                            <p class="small mb-0 text-dark opacity-75 text-uppercase fw-bold">Global Heritage</p>
+                    <div class="position-relative d-flex justify-content-center">
+                        <div class="position-absolute top-0 start-0 translate-middle-y" style="width: 90%; height: 90%; background: linear-gradient(135deg, #ffd700 0%, #ffed4a 50%, #fff8e1 100%); border-radius: 50%; opacity: 0.3; z-index: 0; transform: translate(-10%, 10%);"></div>
+                        <div class="position-relative z-1" style="max-width: 400px;">
+                            <img src="{{ asset('images/watoto.png') }}" alt="Fransalian Student" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: auto; object-fit: cover;">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">About Our School</h6>
-                    <h2 class="display-5 fw-bold mb-4 text-dark" style="color: var(--primary-blue) !important;">Providing Excellence in <span class="text-primary">Education</span></h2>
-                    <p class="lead text-muted mb-4">Fransalian School Bombambili is more than just a place of learning; it is a community where hearts are nurtured and minds are educated according to the spirit of St. Francis de Sales.</p>
-                    <div class="row g-4 mb-5">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary-light text-primary rounded-circle p-2 me-3">
-                                    <i class="bi bi-check2-circle fs-4"></i>
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Welcome to</h6>
+                    <h2 class="display-5 fw-bold mb-4 text-dark" style="color: var(--primary-blue) !important;">Fransalian <span class="text-primary">School</span></h2>
+                    <p class="lead text-muted mb-4">Fransalian School is a community where hearts are nurtured and minds are educated in the gentle spirit of St. Francis de Sales. We are committed to providing a holistic learning environment that shapes confident, compassionate, and capable young learners.</p>
+                    <p class="text-muted mb-4">Located in Bombambili, Dar es Salaam, our school blends academic excellence with spiritual growth, preparing every child to become a responsible citizen and a lifelong learner.</p>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex p-3 rounded-4 bg-primary-light h-100">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
+                                    <i class="bi bi-book-half fs-4"></i>
                                 </div>
-                                <h6 class="fw-bold mb-0 text-dark">Holistic Growth</h6>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-dark">Medium of Instruction</h6>
+                                    <p class="text-muted small mb-0">English Medium with Swahili</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary-light text-primary rounded-circle p-2 me-3">
-                                    <i class="bi bi-check2-circle fs-4"></i>
+                        <div class="col-md-6">
+                            <div class="d-flex p-3 rounded-4 bg-warning-light h-100">
+                                <div class="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 50px; height: 50px;">
+                                    <i class="bi bi-mortarboard fs-4"></i>
                                 </div>
-                                <h6 class="fw-bold mb-0 text-dark">Value Based</h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary-light text-primary rounded-circle p-2 me-3">
-                                    <i class="bi bi-check2-circle fs-4"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-dark">Course of Study</h6>
+                                    <p class="text-muted small mb-0">Pre & Primary Education</p>
                                 </div>
-                                <h6 class="fw-bold mb-0 text-dark">Modern Facilities</h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary-light text-primary rounded-circle p-2 me-3">
-                                    <i class="bi bi-check2-circle fs-4"></i>
-                                </div>
-                                <h6 class="fw-bold mb-0 text-dark">Qualified Staff</h6>
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('msfs') }}" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow transition-hover">LEARN OUR STORY</a>
+                    
+                    <a href="{{ route('msfs') }}" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow transition-hover">
+                        <i class="bi bi-arrow-right-circle me-2"></i>Learn Our Story
+                    </a>
                 </div>
             </div>
         </div>
