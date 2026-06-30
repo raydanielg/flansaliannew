@@ -67,7 +67,7 @@ class PageController extends Controller
             try {
                 $data['newsItems'] = News::where('is_active', true)
                     ->orderBy('published_at', 'desc')
-                    ->get();
+                    ->paginate(9);
             } catch (\Exception $e) {
                 $data['newsItems'] = collect();
             }
@@ -125,6 +125,20 @@ class PageController extends Controller
     public function fees() { return $this->show('fees'); }
     public function portal() { return $this->show('portal'); }
     public function news() { return $this->show('news'); }
+
+    public function newsDetail($slug)
+    {
+        try {
+            $newsItem = News::where('slug', $slug)
+                ->where('is_active', true)
+                ->firstOrFail();
+        } catch (\Exception $e) {
+            abort(404);
+        }
+
+        return view('pages.news-detail', compact('newsItem'));
+    }
+
     public function feedback() { return $this->show('feedback'); }
     public function helpDesk() { return $this->show('help-desk'); }
     public function contact() { return $this->show('contact'); }

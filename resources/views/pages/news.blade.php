@@ -13,54 +13,69 @@
                     <i class="bi bi-house-door-fill text-white small"></i>
                     <a href="{{ route('welcome') }}" class="text-white text-decoration-none small">Home</a>
                     <i class="bi bi-chevron-right text-white-50 small"></i>
-                    <span class="text-warning small fw-bold">News</span>
+                    <span class="text-warning small fw-bold">News & Events</span>
                 </div>
-                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">{{ $page->title }}</h1>
+                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Latest News & Events</h1>
+                <p class="lead text-white-50 mb-3 mx-auto" style="max-width: 600px;">Stay updated with the latest happenings at Fransalian School.</p>
                 <div class="mx-auto" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4a); border-radius: 2px;"></div>
             </div>
         </div>
     </section>
     <div style="height: 5px; background: linear-gradient(90deg, #ffd700, #ffed4a, #ffd700);"></div>
 
-    <div class="container py-5 animate__animated animate__fadeIn">
-        <div class="row justify-content-center">
-            <div class="col-md-11">
-                <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: #fff;">
-                    <div class="row g-0">
-                        <div class="col-lg-3 bg-light p-4 d-flex flex-column align-items-center text-center border-end">
-                            <div class="icon-box bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4 shadow-sm" style="width: 100px; height: 100px; border: 2px solid var(--primary-blue);">
-                                <i class="bi bi-newspaper fs-1" style="color: var(--primary-blue) !important;"></i>
+    <section class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row g-4">
+                @forelse($newsItems ?? collect() as $item)
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden news-card" style="border-radius: 20px; background: #fff;">
+                        <div class="position-relative overflow-hidden" style="height: 220px;">
+                            @if($item->image)
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-100 h-100 news-card-img" style="object-fit: cover;">
+                            @else
+                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
+                                <i class="bi bi-newspaper fs-1 text-primary opacity-50"></i>
                             </div>
-                            <h4 class="fw-bold text-dark mb-2 text-uppercase small tracking-widest">NEWS</h4>
-                            <div class="divider bg-warning mx-auto mb-4" style="width: 40px; height: 3px;"></div>
-                            <p class="text-muted small italic">Stay updated with us.</p>
+                            @endif
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
+                                    {{ $item->published_at ? \Carbon\Carbon::parse($item->published_at)->format('M d, Y') : 'Upcoming' }}
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-lg-9 p-5">
-                            <div class="content-header mb-4 pb-3 border-bottom">
-                                <h2 class="fw-bold text-dark mb-0" style="color: var(--primary-blue) !important;">Latest Updates</h2>
-                            </div>
-                            <p class="lead text-muted mb-5" style="line-height: 1.8;">{{ $page->content }}</p>
-                            @forelse($newsItems ?? collect() as $news)
-                            <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        <span class="badge bg-primary rounded-pill">{{ $news->category ?? 'General' }}</span>
-                                        <small class="text-muted">{{ $news->published_at ? \Carbon\Carbon::parse($news->published_at)->format('M d, Y') : 'Draft' }}</small>
-                                    </div>
-                                    <h5 class="fw-bold text-dark">{{ $news->title }}</h5>
-                                    <p class="text-muted mb-0">{{ $news->excerpt ?? Str::limit($news->content, 150) }}</p>
-                                </div>
-                            </div>
-                            @empty
-                            <div class="text-center py-5 text-muted">
-                                <i class="bi bi-newspaper fs-1 d-block mb-3 opacity-25"></i>
-                                <p>No news articles available yet.</p>
-                            </div>
-                            @endforelse
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold mb-3" style="color: #003366;">{{ $item->title }}</h5>
+                            <p class="text-muted flex-grow-1" style="line-height: 1.7;">{{ Str::limit(strip_tags($item->content), 120) }}</p>
+                            <a href="{{ route('news.show', $item->slug) }}" class="btn btn-outline-primary rounded-pill fw-bold mt-3 align-self-start">
+                                Read More <i class="bi bi-arrow-right-circle ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+                @empty
+                <div class="col-12 text-center py-5">
+                    <div class="card border-0 shadow-sm rounded-4 p-5 bg-white">
+                        <i class="bi bi-newspaper fs-1 text-muted mb-3"></i>
+                        <h4 class="text-muted">No news or events yet</h4>
+                        <p class="text-muted">Check back soon for updates from Fransalian School.</p>
+                    </div>
+                </div>
+                @endforelse
             </div>
+
+            @if(($newsItems ?? collect())->hasPages())
+            <div class="d-flex justify-content-center mt-5">
+                {{ $newsItems->links() }}
+            </div>
+            @endif
         </div>
-    </div>
+    </section>
+
+    <style>
+        .news-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .news-card:hover { transform: translateY(-10px); box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.15) !important; }
+        .news-card-img { transition: transform 0.5s ease; }
+        .news-card:hover .news-card-img { transform: scale(1.1); }
+        .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
+    </style>
 @endsection

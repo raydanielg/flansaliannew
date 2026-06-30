@@ -416,6 +416,73 @@
         </div>
     </section>
 
+    <!-- Latest News & Events Section -->
+    <section class="py-5 bg-light overflow-hidden">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Stay Updated</h6>
+                <h2 class="display-5 fw-bold text-dark">Latest News & <span class="text-primary">Events</span></h2>
+                <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">Catch up with the latest stories, activities, and announcements from our school community.</p>
+            </div>
+            @php
+                $latestNews = collect();
+                try {
+                    $latestNews = \App\Models\News::where('is_active', true)
+                        ->whereNotNull('published_at')
+                        ->orderBy('published_at', 'desc')
+                        ->take(3)
+                        ->get();
+                } catch (\Exception $e) {
+                    $latestNews = collect();
+                }
+            @endphp
+            <div class="row g-4">
+                @forelse($latestNews as $index => $item)
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp {{ $index > 0 ? 'animate__delay-' . min($index, 2) . 's' : '' }}">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden landing-news-card" style="border-radius: 20px; background: #fff;">
+                        <div class="position-relative overflow-hidden" style="height: 220px;">
+                            @if($item->image)
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-100 h-100 landing-news-img" style="object-fit: cover;">
+                            @else
+                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
+                                <i class="bi bi-newspaper fs-1 text-primary opacity-50"></i>
+                            </div>
+                            @endif
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
+                                    {{ \Carbon\Carbon::parse($item->published_at)->format('M d, Y') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold mb-3" style="color: #003366;">{{ $item->title }}</h5>
+                            <p class="text-muted flex-grow-1" style="line-height: 1.7;">{{ Str::limit(strip_tags($item->content), 100) }}</p>
+                            <a href="{{ route('news.show', $item->slug) }}" class="btn btn-outline-primary rounded-pill fw-bold mt-3 align-self-start">
+                                Read More <i class="bi bi-arrow-right-circle ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center py-5">
+                    <div class="card border-0 shadow-sm rounded-4 p-5 bg-white">
+                        <i class="bi bi-newspaper fs-1 text-muted mb-3"></i>
+                        <h4 class="text-muted">No news or events yet</h4>
+                        <p class="text-muted">Check back soon for updates from Fransalian School.</p>
+                    </div>
+                </div>
+                @endforelse
+            </div>
+            @if($latestNews->count() > 0)
+            <div class="text-center mt-5">
+                <a href="{{ route('news') }}" class="btn btn-primary rounded-pill px-5 fw-bold">
+                    <i class="bi bi-newspaper me-2"></i>View All News & Events
+                </a>
+            </div>
+            @endif
+        </div>
+    </section>
+
     <style>
         :root {
             --primary-blue: #003366;
@@ -432,6 +499,11 @@
             transform: translateY(-10px);
         }
         .tracking-wider { letter-spacing: 0.1em; }
+        .landing-news-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .landing-news-card:hover { transform: translateY(-10px); box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.15) !important; }
+        .landing-news-img { transition: transform 0.5s ease; }
+        .landing-news-card:hover .landing-news-img { transform: scale(1.1); }
+        .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
     </style>
 
     <!-- Admission CTA Section -->

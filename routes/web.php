@@ -21,6 +21,7 @@ Route::get('/portal', [PageController::class, 'portal'])->name('portal');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::get('/news', [PageController::class, 'news'])->name('news');
+Route::get('/news/{slug}', [PageController::class, 'newsDetail'])->name('news.show');
 Route::get('/feedback', [PageController::class, 'feedback'])->name('feedback');
 Route::post('/feedback', [PageController::class, 'storeFeedback'])->name('feedback.store');
 Route::get('/help-desk', [PageController::class, 'helpDesk'])->name('help-desk');
