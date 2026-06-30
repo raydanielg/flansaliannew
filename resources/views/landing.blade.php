@@ -89,6 +89,10 @@
             font-size: 0.95rem;
             font-weight: 500;
         }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 
     <!-- Welcome / About Section -->
@@ -96,10 +100,36 @@
         <div class="container py-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <div class="position-relative d-flex justify-content-center">
-                        <div class="position-absolute top-0 start-0 translate-middle-y" style="width: 90%; height: 90%; background: linear-gradient(135deg, #ffd700 0%, #ffed4a 50%, #fff8e1 100%); border-radius: 50%; opacity: 0.3; z-index: 0; transform: translate(-10%, 10%);"></div>
-                        <div class="position-relative z-1" style="max-width: 400px;">
-                            <img src="{{ asset('images/watoto.png') }}" alt="Fransalian Student" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="position-relative">
+                        <!-- Floating Logo -->
+                        <div class="position-absolute top-0 start-0 translate-middle z-2 d-none d-md-block" style="animation: spin 20s linear infinite;">
+                            <div class="bg-white rounded-circle shadow-lg p-2" style="width: 100px; height: 100px; border: 3px solid #ffd700;">
+                                <img src="{{ asset('logo.png') }}" alt="Fransalian Logo" class="w-100 h-100" style="object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <!-- Decorative Background -->
+                        <div class="position-absolute top-50 start-50 translate-middle" style="width: 95%; height: 95%; background: linear-gradient(135deg, #ffd700 0%, #ffed4a 50%, #fff8e1 100%); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; opacity: 0.25; z-index: 0;"></div>
+
+                        <!-- Image Grid -->
+                        <div class="position-relative z-1">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="rounded-4 overflow-hidden shadow-lg" style="height: 280px;">
+                                        <img src="{{ asset('images/jengofarasaian.png') }}" alt="Fransalian School Building" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rounded-4 overflow-hidden shadow-lg" style="height: 200px;">
+                                        <img src="{{ asset('images/picwatoto2.png') }}" alt="Fransalian Student Life" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rounded-4 overflow-hidden shadow-lg" style="height: 200px;">
+                                        <img src="{{ asset('images/picwatoto3.png') }}" alt="Fransalian Learning" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
