@@ -3,146 +3,93 @@
 @section('content')
     @include('layouts.header')
 
-    <!-- Hero Slider -->
-    <section id="heroSlider" class="position-relative overflow-hidden text-white" style="min-height: 90vh; display: flex; align-items: center;">
-        <!-- Slide 1 -->
-        <div class="hero-slide active" style="background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; position: absolute; inset: 0; opacity: 1; transition: opacity 1s ease-in-out;">
-            <div class="container h-100 d-flex align-items-center" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="row w-100">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase slide-label">Welcome to</p>
-                        <h1 class="display-2 fw-bold mb-4 slide-title" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Fransalian School <span class="text-warning">Bombambili</span></h1>
-                        <p class="lead mb-5 opacity-90 mx-auto slide-desc" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Nurturing hearts and educating minds in the spirit of St. Francis de Sales. Join our community of excellence.</p>
-                        <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg slide-cta" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
-                            <i class="bi bi-pencil-square me-2"></i> START APPLICATION
-                        </a>
-                    </div>
+    <!-- Hero Section -->
+    <section class="position-relative overflow-hidden text-white d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(rgba(0, 26, 51, 0.7), rgba(0, 26, 51, 0.7)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center animate__animated animate__fadeInUp">
+                    <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
+                    <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);"><em>Rooted in values. Driven by excellence. Committed to holistic growth.</em></p>
+                    <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg transition-hover" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                        <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="hero-slide" style="background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out;">
-            <div class="container h-100 d-flex align-items-center" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="row w-100">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase slide-label">Excellence in Education</p>
-                        <h1 class="display-2 fw-bold mb-4 slide-title" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Holistic Growth & <span class="text-warning">Academic Success</span></h1>
-                        <p class="lead mb-5 opacity-90 mx-auto slide-desc" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">We provide a safe, supportive environment where every child discovers their potential and develops lifelong skills.</p>
-                        <a href="{{ route('msfs') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg slide-cta" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
-                            <i class="bi bi-book-open me-2"></i> EXPLORE PROGRAMS
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="hero-slide" style="background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out;">
-            <div class="container h-100 d-flex align-items-center" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="row w-100">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase slide-label">Join Our Family</p>
-                        <h1 class="display-2 fw-bold mb-4 slide-title" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">A Place to <span class="text-warning">Belong & Thrive</span></h1>
-                        <p class="lead mb-5 opacity-90 mx-auto slide-desc" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Experience the warmth of the Fransalian community. Admissions are open for the upcoming academic year.</p>
-                        <a href="{{ route('contact') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg slide-cta" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
-                            <i class="bi bi-telephone-fill me-2"></i> CONTACT US
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <button class="hero-prev position-absolute start-0 top-50 translate-middle-y btn btn-outline-light rounded-circle d-none d-md-flex align-items-center justify-content-center ms-4" style="width: 50px; height: 50px; z-index: 10; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
-            <i class="bi bi-chevron-left fs-4"></i>
-        </button>
-        <button class="hero-next position-absolute end-0 top-50 translate-middle-y btn btn-outline-light rounded-circle d-none d-md-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; z-index: 10; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
-            <i class="bi bi-chevron-right fs-4"></i>
-        </button>
-
-        <!-- Progress Dots -->
-        <div class="position-absolute bottom-0 start-50 translate-middle-x d-flex gap-2 mb-5" style="z-index: 10;">
-            <button class="hero-dot active rounded-circle border-0" style="width: 12px; height: 12px; background: #ffd700; transition: all 0.3s; opacity: 1;"></button>
-            <button class="hero-dot rounded-circle border-0" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); transition: all 0.3s;"></button>
-            <button class="hero-dot rounded-circle border-0" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); transition: all 0.3s;"></button>
-        </div>
-
-        <!-- Progress Bar -->
-        <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 10;">
-            <div class="hero-progress" style="height: 3px; background: #ffd700; width: 0%; transition: width 0.1s linear;"></div>
-        </div>
-
+        
         <!-- Wave Shape -->
         <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 1;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f4f7f6" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
     </section>
 
+    <!-- Marquee Announcement Bar -->
+    <section class="py-2" style="background: linear-gradient(90deg, #003366, #004080);">
+        <div class="marquee-container overflow-hidden position-relative">
+            <div class="marquee-track d-flex align-items-center text-white">
+                <span class="marquee-item px-4">
+                    <i class="bi bi-megaphone-fill text-warning me-2"></i>
+                    Admissions Open 2026-27 — Apply today and join the Fransalian family!
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-calendar-event-fill text-warning me-2"></i>
+                    New academic year begins soon — Enroll your child for a brighter future.
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-telephone-fill text-warning me-2"></i>
+                    For enquiries call +255 749 770 703 or +255 688 367 100
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-envelope-fill text-warning me-2"></i>
+                    Email us at info@fransalian.ac.tz
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-megaphone-fill text-warning me-2"></i>
+                    Admissions Open 2026-27 — Apply today and join the Fransalian family!
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-calendar-event-fill text-warning me-2"></i>
+                    New academic year begins soon — Enroll your child for a brighter future.
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-telephone-fill text-warning me-2"></i>
+                    For enquiries call +255 749 770 703 or +255 688 367 100
+                </span>
+                <span class="marquee-divider text-warning">|</span>
+                <span class="marquee-item px-4">
+                    <i class="bi bi-envelope-fill text-warning me-2"></i>
+                    Email us at info@fransalian.ac.tz
+                </span>
+            </div>
+        </div>
+    </section>
+
     <style>
-        .hero-slide.active .slide-label { animation: fadeInUp 0.6s ease-out 0.2s both; }
-        .hero-slide.active .slide-title { animation: fadeInUp 0.6s ease-out 0.4s both; }
-        .hero-slide.active .slide-desc { animation: fadeInUp 0.6s ease-out 0.6s both; }
-        .hero-slide.active .slide-cta { animation: fadeInUp 0.6s ease-out 0.8s both; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .marquee-container {
+            white-space: nowrap;
         }
-        .hero-dot.active { width: 40px !important; border-radius: 6px !important; opacity: 1 !important; }
+        .marquee-track {
+            display: inline-flex;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-item {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
     </style>
-
-    <script>
-        (function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.hero-dot');
-            const prevBtn = document.querySelector('.hero-prev');
-            const nextBtn = document.querySelector('.hero-next');
-            const progressBar = document.querySelector('.hero-progress');
-            let current = 0;
-            const duration = 6000; // 6 seconds per slide
-            let startTime;
-            let animId;
-
-            function showSlide(index) {
-                slides.forEach((s, i) => {
-                    s.classList.toggle('active', i === index);
-                    s.style.opacity = i === index ? '1' : '0';
-                });
-                dots.forEach((d, i) => {
-                    d.classList.toggle('active', i === index);
-                    d.style.background = i === index ? '#ffd700' : 'rgba(255,255,255,0.5)';
-                    d.style.width = i === index ? '40px' : '12px';
-                    d.style.borderRadius = i === index ? '6px' : '50%';
-                    d.style.opacity = i === index ? '1' : '0.5';
-                });
-                current = index;
-                startTime = performance.now();
-            }
-
-            function nextSlide() {
-                showSlide((current + 1) % slides.length);
-            }
-            function prevSlide() {
-                showSlide((current - 1 + slides.length) % slides.length);
-            }
-
-            function animateProgress(time) {
-                if (!startTime) startTime = time;
-                const elapsed = time - startTime;
-                const pct = Math.min((elapsed / duration) * 100, 100);
-                if (progressBar) progressBar.style.width = pct + '%';
-                if (elapsed >= duration) {
-                    nextSlide();
-                }
-                animId = requestAnimationFrame(animateProgress);
-            }
-
-            if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); });
-            if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); });
-            dots.forEach((d, i) => d.addEventListener('click', () => showSlide(i)));
-
-            startTime = performance.now();
-            animId = requestAnimationFrame(animateProgress);
-        })();
-    </script>
 
     <!-- Welcome / About Section -->
     <section class="py-5 bg-white overflow-hidden">
