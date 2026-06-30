@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -245,6 +245,32 @@
             font-size: 0.75rem;
             color: #888;
             margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .display-3 { font-size: 1.8rem !important; }
+            .display-4 { font-size: 1.5rem !important; }
+            .display-5 { font-size: 1.3rem !important; }
+            .lead { font-size: 0.95rem !important; }
+            section.py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+            .container.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            .container.py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+        }
+
+        @media (max-width: 576px) {
+            .display-3 { font-size: 1.4rem !important; }
+            .display-4 { font-size: 1.2rem !important; }
+            .display-5 { font-size: 1.1rem !important; }
+            .lead { font-size: 0.85rem !important; }
+            section.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            .container.py-5 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+            .card-body.p-4 { padding: 1rem !important; }
+            .card-body.p-5 { padding: 1.25rem !important; }
+            .p-4 { padding: 1rem !important; }
+            .p-5 { padding: 1.25rem !important; }
+            .btn-lg { font-size: 0.9rem !important; padding: 0.5rem 1.5rem !important; }
+            .rounded-pill { border-radius: 50rem !important; }
+            .shadow-lg { box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) !important; }
         }
 
         @media (max-width: 992px) {
