@@ -345,47 +345,50 @@
     <!-- Features Section -->
     <section class="py-5 bg-white overflow-hidden">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
+            <div class="row g-4 g-lg-5 align-items-center">
                 <div class="col-lg-5 scroll-reveal">
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Why Choose Us</h6>
                     <h2 class="display-5 fw-bold text-dark mb-4">Our Key <span class="text-primary">Strengths</span></h2>
-                    <p class="text-muted mb-0" style="line-height: 1.8;">At Fransalian School, we combine academic rigor with spiritual nurturing to create well-rounded individuals ready to face the challenges of tomorrow.</p>
+                    <p class="text-muted mb-4" style="line-height: 1.8;">At Fransalian School, we combine academic rigor with spiritual nurturing to create well-rounded individuals ready to face the challenges of tomorrow.</p>
+                    <a href="{{ route('admission') }}" class="btn btn-primary rounded-pill px-4 fw-bold">
+                        <i class="bi bi-mortarboard me-2"></i>Apply Now
+                    </a>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 scroll-reveal" style="transition-delay: 0.2s;">
                     <div class="row g-3">
-                        <div class="col-md-6 scroll-reveal">
-                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
-                                <div class="icon-box bg-primary-light text-primary rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-book-half fs-3"></i>
+                        <div class="col-6">
+                            <div class="card border-0 shadow-sm h-100 p-3 p-md-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-primary-light text-primary rounded-circle mx-auto mb-2 mb-md-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-book-half fs-4"></i>
                                 </div>
-                                <h5 class="fw-bold mb-2" style="color: #003366;">Academic Excellence</h5>
+                                <h6 class="fw-bold mb-2" style="color: #003366;">Academic Excellence</h6>
                                 <p class="text-muted small mb-0">A rigorous curriculum designed to inspire curiosity and critical thinking.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.15s;">
-                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
-                                <div class="icon-box bg-warning-light text-warning rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-heart-pulse fs-3"></i>
+                        <div class="col-6">
+                            <div class="card border-0 shadow-sm h-100 p-3 p-md-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-warning-light text-warning rounded-circle mx-auto mb-2 mb-md-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-heart-pulse fs-4"></i>
                                 </div>
-                                <h5 class="fw-bold mb-2" style="color: #003366;">Spiritual Growth</h5>
+                                <h6 class="fw-bold mb-2" style="color: #003366;">Spiritual Growth</h6>
                                 <p class="text-muted small mb-0">Grounded in MSFS values, nurturing character and spiritual well-being.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.3s;">
-                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
-                                <div class="icon-box bg-success-light text-success rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-people fs-3"></i>
+                        <div class="col-6">
+                            <div class="card border-0 shadow-sm h-100 p-3 p-md-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-success-light text-success rounded-circle mx-auto mb-2 mb-md-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-people fs-4"></i>
                                 </div>
-                                <h5 class="fw-bold mb-2" style="color: #003366;">Inclusive Community</h5>
+                                <h6 class="fw-bold mb-2" style="color: #003366;">Inclusive Community</h6>
                                 <p class="text-muted small mb-0">A welcoming environment where every child feels valued and respected.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 scroll-reveal" style="transition-delay: 0.45s;">
-                            <div class="card border-0 shadow-sm h-100 p-4 rounded-4 transition-hover text-center feature-card">
-                                <div class="icon-box bg-info-light text-info rounded-circle mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-lightbulb fs-3"></i>
+                        <div class="col-6">
+                            <div class="card border-0 shadow-sm h-100 p-3 p-md-4 rounded-4 transition-hover text-center feature-card">
+                                <div class="icon-box bg-info-light text-info rounded-circle mx-auto mb-2 mb-md-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-lightbulb fs-4"></i>
                                 </div>
-                                <h5 class="fw-bold mb-2" style="color: #003366;">Activity-Based Learning</h5>
+                                <h6 class="fw-bold mb-2" style="color: #003366;">Activity-Based Learning</h6>
                                 <p class="text-muted small mb-0">Hands-on approach that makes learning engaging, fun, and memorable.</p>
                             </div>
                         </div>
