@@ -5,7 +5,7 @@
     <!-- Sidebar -->
     <div class="bg-dark text-white shadow-lg" style="width: 280px; min-height: 100vh; background-color: #001a33 !important;">
         <div class="p-4 border-bottom border-secondary border-opacity-25 text-center">
-            <img src="{{ asset('cropped-cropped-school_emblem-1-removebg-preview.png') }}" alt="Logo" class="img-fluid mb-3 bg-white rounded-circle p-2" style="max-height: 80px;">
+            <img src="{{ asset('logo.png') }}" alt="Logo" class="img-fluid mb-3 bg-white rounded-circle p-2" style="max-height: 80px;">
             <h6 class="fw-bold mb-0 text-uppercase tracking-wider small">Parents' Portal</h6>
         </div>
         
