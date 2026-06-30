@@ -238,18 +238,34 @@ class AdminController extends Controller
     public function storeGallery(Request $request)
     {
         $request->validate([
-            'title' => 'required|string',
-            'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
-            'category' => 'required|string',
-            'order' => 'required|integer',
+            'images' => 'required|array',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'titles' => 'required|array',
+            'titles.*' => 'required|string',
+            'categories' => 'required|array',
+            'categories.*' => 'required|string',
+            'descriptions' => 'nullable|array',
+            'descriptions.*' => 'nullable|string',
+            'orders' => 'required|array',
+            'orders.*' => 'required|integer',
         ]);
-        $data = $request->except('image');
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('gallery', 'public');
+
+        $images = $request->file('images');
+        $count = 0;
+
+        foreach ($images as $index => $image) {
+            $path = $image->store('gallery', 'public');
+            Gallery::create([
+                'title' => $request->titles[$index] ?? 'Gallery Image',
+                'description' => $request->descriptions[$index] ?? null,
+                'image' => $path,
+                'category' => $request->categories[$index] ?? 'General',
+                'order' => $request->orders[$index] ?? 0,
+            ]);
+            $count++;
         }
-        Gallery::create($data);
-        return back()->with('success', 'Gallery image added.');
+
+        return back()->with('success', $count . ' gallery image(s) added successfully.');
     }
 
     public function updateGallery(Request $request, Gallery $gallery)

@@ -39,7 +39,15 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card border-0 shadow-sm h-100" style="border-radius: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
                                         <div style="height: 280px; background: #f8f9fa; overflow: hidden; border-radius: 20px 20px 0 0;">
-                                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x280?text=No+Photo'">
+                                            @if($member->photo)
+                                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;">
+                                            @else
+                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
+                                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 120px; height: 120px; font-size: 3.5rem;">
+                                                    {{ strtoupper(substr($member->name, 0, 1)) }}
+                                                </div>
+                                            </div>
+                                            @endif
                                         </div>
                                         <div class="card-body p-4 text-center">
                                             <h5 class="fw-bold mb-1" style="color: #003366;">{{ $member->name }}</h5>
