@@ -30,11 +30,11 @@
                     <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase" style="font-size: clamp(1rem, 2.5vw, 1.4rem); letter-spacing: 0.15em;">Welcome to Fransalian School</p>
                     <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
                     <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Rooted in values. Driven by excellence. Committed to holistic growth.</p>
-                    <div class="d-inline-flex flex-wrap justify-content-center gap-3">
-                        <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg hero-btn-primary" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                    <div class="d-flex flex-row justify-content-center align-items-center gap-3 flex-nowrap">
+                        <a href="{{ route('apply') }}" class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg hero-btn-primary" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none; white-space: nowrap;">
                             <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
                         </a>
-                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold hero-btn-outline">
+                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold hero-btn-outline" style="white-space: nowrap;">
                             <i class="bi bi-telephone-fill me-2"></i> Contact Us
                         </a>
                     </div>
