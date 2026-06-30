@@ -92,7 +92,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
                 <p class="text-secondary small mb-0">
-                    &copy; {{ date('Y') }} <span class="text-white fw-bold">Fransalian School Bombambili</span>. All Rights Reserved.
+                    &copy; {{ date('Y') }} <span class="text-white fw-bold">Fransalian School</span>. All Rights Reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
