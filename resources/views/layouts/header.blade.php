@@ -23,7 +23,7 @@
                 <div class="ms-3 ps-3 border-start" style="border-color: #e0e0e0 !important;">
                     <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL</h1>
                     <p class="mb-1 text-secondary fw-bold small">Pre & Primary School</p>
-                    <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.85rem;">Bombambili, Dar es Salaam</p>
+                    <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.85rem;">Learning and Growing Together</p>
                     <ul class="list-inline mb-0 mt-1">
                         <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Knowledge</li>
                         <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Love</li>
@@ -38,8 +38,8 @@
                     <div class="d-flex align-items-center">
                         <i class="bi bi-book text-primary me-2 fs-5"></i>
                         <div>
-                            <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">State Syllabus</span>
-                            <span class="text-muted" style="font-size: 0.75rem;">English Medium</span>
+                            <span class="d-block fw-bold text-dark" style="font-size: 0.85rem;">English Medium</span>
+                            <span class="text-muted" style="font-size: 0.75rem;">State Syllabus</span>
                         </div>
                     </div>
                     <a href="tel:+255749770703" class="d-flex align-items-center text-decoration-none text-reset">
