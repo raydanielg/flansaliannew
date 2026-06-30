@@ -10,6 +10,7 @@ use App\Models\HelpDesk;
 use App\Models\News;
 use App\Models\Page;
 use App\Models\Setting;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -271,6 +272,61 @@ class AdminController extends Controller
     {
         $gallery->delete();
         return back()->with('success', 'Gallery image deleted.');
+    }
+
+    /* ---------- Team ---------- */
+    public function team()
+    {
+        $team = Team::orderBy('order')->paginate(12);
+        return view('admin.team', compact('team'));
+    }
+
+    public function storeTeam(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:255',
+            'bio' => 'nullable|string',
+            'order' => 'required|integer',
+            'is_active' => 'nullable|boolean',
+        ]);
+        $data = $request->except('photo');
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store('team', 'public');
+        }
+        $data['is_active'] = $request->boolean('is_active', true);
+        Team::create($data);
+        return back()->with('success', 'Team member added.');
+    }
+
+    public function updateTeam(Request $request, Team $team)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:255',
+            'bio' => 'nullable|string',
+            'order' => 'required|integer',
+            'is_active' => 'nullable|boolean',
+        ]);
+        $data = $request->except('photo');
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store('team', 'public');
+        }
+        $data['is_active'] = $request->boolean('is_active', false);
+        $team->update($data);
+        return back()->with('success', 'Team member updated.');
+    }
+
+    public function deleteTeam(Team $team)
+    {
+        $team->delete();
+        return back()->with('success', 'Team member deleted.');
     }
 
     /* ---------- Settings ---------- */
