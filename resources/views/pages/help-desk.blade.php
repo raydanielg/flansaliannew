@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Help Desk | Fransalian School')
+@section('meta_description', 'Find answers to frequently asked questions about Fransalian School admissions, academics, and school life.')
+@section('og_title', 'Help Desk | Fransalian School')
+@section('og_description', 'Find answers to frequently asked questions about Fransalian School.')
+
 @section('content')
     @include('layouts.header')
 

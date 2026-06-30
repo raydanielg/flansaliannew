@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Our Mission | Fransalian School')
+@section('meta_description', 'The mission of Fransalian School: to provide quality education that nurtures the whole person intellectually, spiritually, socially, and physically.')
+@section('og_title', 'Our Mission | Fransalian School')
+@section('og_description', 'The mission of Fransalian School: quality education that nurtures the whole person.')
+
 @section('content')
     @include('layouts.header')
 

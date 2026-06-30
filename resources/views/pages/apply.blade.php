@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Apply Online | Fransalian School')
+@section('meta_description', 'Apply online for admission to Fransalian School Bombambili, Dar es Salaam. English Medium Pre & Primary School. Admissions open for 2026-27.')
+@section('og_title', 'Apply Online | Fransalian School')
+@section('og_description', 'Apply online for admission to Fransalian School Bombambili, Dar es Salaam.')
+
 @section('content')
     @include('layouts.header')
 

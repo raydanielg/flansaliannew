@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'School Gallery | Fransalian School')
+@section('meta_description', 'Explore photos of Fransalian School Bombambili - school life, events, facilities, and achievements of our students.')
+@section('og_title', 'School Gallery | Fransalian School')
+@section('og_description', 'Explore photos of Fransalian School Bombambili - school life, events, and achievements.')
+
 @section('content')
     @include('layouts.header')
 

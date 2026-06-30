@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Feedback | Fransalian School')
+@section('meta_description', 'Share your feedback and suggestions with Fransalian School. Your input helps us improve and serve our school community better.')
+@section('og_title', 'Feedback | Fransalian School')
+@section('og_description', 'Share your feedback and suggestions with Fransalian School.')
+
 @section('content')
     @include('layouts.header')
 

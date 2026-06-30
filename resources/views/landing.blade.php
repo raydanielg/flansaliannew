@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Fransalian School | Pre & Primary English Medium School - Dar es Salaam')
+@section('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2026-27.')
+@section('meta_keywords', 'Fransalian School, Dar es Salaam, primary school, pre school, English medium, MSFS, Catholic school, admission, Bombambili, Gongo la Mboto')
+@section('og_title', 'Fransalian School | Pre & Primary English Medium School')
+@section('og_description', 'Fransalian School Bombambili, Dar es Salaam - Rooted in values. Driven by excellence. Committed to holistic growth.')
+@section('og_image', asset('images/jengofarasaian.png'))
+
 @section('content')
     @include('layouts.header')
 
@@ -162,7 +169,7 @@
                         <!-- Floating Logo -->
                         <div class="position-absolute top-0 start-0 translate-middle z-2 d-none d-md-block" style="animation: spin 20s linear infinite;">
                             <div class="bg-white rounded-circle shadow-lg p-2" style="width: 100px; height: 100px; border: 3px solid #ffd700;">
-                                <img src="{{ asset('logo.png') }}" alt="Fransalian Logo" class="w-100 h-100" style="object-fit: contain;">
+                                <img src="{{ asset('logo.png') }}" alt="Fransalian School Logo" class="w-100 h-100" style="object-fit: contain;" loading="lazy">
                             </div>
                         </div>
 
@@ -174,17 +181,17 @@
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="rounded-4 overflow-hidden shadow-lg" style="height: 280px;">
-                                        <img src="{{ asset('images/jengofarasaian.png') }}" alt="Fransalian School Building" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <img src="{{ asset('images/jengofarasaian.png') }}" alt="Fransalian School Building Campus Dar es Salaam" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="rounded-4 overflow-hidden shadow-lg" style="height: 200px;">
-                                        <img src="{{ asset('images/picwatoto2.png') }}" alt="Fransalian Student Life" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <img src="{{ asset('images/picwatoto2.png') }}" alt="Fransalian School Students Learning in Class" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="rounded-4 overflow-hidden shadow-lg" style="height: 200px;">
-                                        <img src="{{ asset('images/picwatoto3.png') }}" alt="Fransalian Learning" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <img src="{{ asset('images/picwatoto3.png') }}" alt="Fransalian School Children Activities and Events" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +263,7 @@
                         @foreach($galleryImages as $i => $gImg)
                         <div class="col-6 {{ $i == 0 ? 'col-12' : '' }}">
                             <div class="gallery-item rounded-4 overflow-hidden shadow-sm position-relative" style="cursor: pointer; height: {{ $i == 0 ? '200px' : '120px' }};" onclick="openLightbox('{{ asset('storage/' . $gImg->image) }}', '{{ $gImg->title }}')">
-                                <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }}" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.parentElement.style.display='none'">
+                                <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }} - Fransalian School Gallery" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.parentElement.style.display='none'" loading="lazy">
                                 <div class="gallery-overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-end p-3 text-white" style="background: linear-gradient(transparent 40%, rgba(0,26,51,0.85)); opacity: 0; transition: opacity 0.3s ease;">
                                     <h6 class="fw-bold mb-0 small">{{ $gImg->title }}</h6>
                                 </div>
@@ -415,7 +422,7 @@
                             <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center p-3 h-100 transition-hover staff-card">
                                 <div class="mb-2 position-relative d-inline-block mx-auto">
                                     @if($member->photo)
-                                    <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="rounded-circle shadow-sm" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #f8f9fa;">
+                                    <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }} - {{ $member->position }} Fransalian School" class="rounded-circle shadow-sm" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #f8f9fa;" loading="lazy">
                                     @else
                                     <div class="rounded-circle shadow-sm d-flex align-items-center justify-content-center fw-bold text-white" style="width: 80px; height: 80px; background: #003366; font-size: 2rem; border: 3px solid #f8f9fa;">
                                         {{ strtoupper(substr($member->name, 0, 1)) }}
@@ -471,7 +478,7 @@
                                 <div class="row g-0 h-100">
                                     <div class="col-4 position-relative overflow-hidden" style="min-height: 140px;">
                                         @if($item->image)
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-100 h-100 landing-news-img" style="object-fit: cover;">
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }} - Fransalian School News" class="w-100 h-100 landing-news-img" style="object-fit: cover;" loading="lazy">
                                         @else
                                         <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
                                             <i class="bi bi-newspaper fs-1 text-primary opacity-50"></i>

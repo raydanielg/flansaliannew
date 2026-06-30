@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'MSFS - Missionary Society of St. Francis de Sales | Fransalian School')
+@section('meta_description', 'Learn about the Missionary Society of St. Francis de Sales (MSFS) - the congregation behind Fransalian School. Founded in 1838, dedicated to education and missionary work.')
+@section('og_title', 'MSFS | Fransalian School')
+@section('og_description', 'Learn about the Missionary Society of St. Francis de Sales (MSFS) - the congregation behind Fransalian School.')
+
 @section('content')
     @include('layouts.header')
 

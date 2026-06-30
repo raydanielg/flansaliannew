@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Our Team | Fransalian School')
+@section('meta_description', 'Meet the dedicated staff and teachers of Fransalian School Bombambili, Dar es Salaam. Committed to providing quality education and nurturing every child.')
+@section('og_title', 'Our Team | Fransalian School')
+@section('og_description', 'Meet the dedicated staff and teachers of Fransalian School Bombambili.')
+
 @section('content')
     @include('layouts.header')
 

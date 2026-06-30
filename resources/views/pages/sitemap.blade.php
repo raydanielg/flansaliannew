@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Sitemap | Fransalian School')
+@section('meta_description', 'Navigate through all the pages of Fransalian School website. Find all our content organized in one place.')
+@section('og_title', 'Sitemap | Fransalian School')
+@section('og_description', 'Navigate through all the pages of Fransalian School website.')
+
 @section('content')
     @include('layouts.header')
 

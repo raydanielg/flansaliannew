@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'School Fees | Fransalian School')
+@section('meta_description', 'Fransalian School fees structure - transparent and affordable while maintaining the highest standards of education and facilities.')
+@section('og_title', 'School Fees | Fransalian School')
+@section('og_description', 'Fransalian School fees structure - transparent and affordable quality education.')
+
 @section('content')
     @include('layouts.header')
 

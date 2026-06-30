@@ -44,7 +44,7 @@
                     <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: #fff;">
                         @if($newsItem->image)
                         <div class="overflow-hidden" style="height: 450px;">
-                            <img src="{{ asset('storage/' . $newsItem->image) }}" alt="{{ $newsItem->title }}" class="w-100 h-100" style="object-fit: cover;">
+                            <img src="{{ asset('storage/' . $newsItem->image) }}" alt="{{ $newsItem->title }} - Fransalian School News" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
                         </div>
                         @endif
                         <div class="card-body p-4 p-lg-5">
@@ -97,4 +97,9 @@
         });
     }
     </script>
+
+    <style>
+        .share-btn { transition: all 0.3s ease; }
+        .share-btn:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    </style>
 @endsection

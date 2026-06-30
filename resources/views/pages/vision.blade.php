@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Our Vision | Fransalian School')
+@section('meta_description', 'The vision of Fransalian School: to be a leading primary school that empowers children to become responsible, compassionate, and knowledgeable citizens.')
+@section('og_title', 'Our Vision | Fransalian School')
+@section('og_description', 'The vision of Fransalian School: empowering children to become responsible and compassionate citizens.')
+
 @section('content')
     @include('layouts.header')
 
