@@ -47,7 +47,15 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card border-0 rounded-4 shadow-sm overflow-hidden" style="transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
                             <div style="height: 200px; background: #f0f0f0; overflow: hidden; position: relative;">
-                                <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x200?text=No+Photo'">
+                                @if($member->photo)
+                                <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;">
+                                @else
+                                <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 80px; height: 80px; font-size: 2.2rem;">
+                                        {{ strtoupper(substr($member->name, 0, 1)) }}
+                                    </div>
+                                </div>
+                                @endif
                                 @if(!$member->is_active)
                                 <span class="badge bg-secondary position-absolute top-0 end-0 m-2">Inactive</span>
                                 @endif

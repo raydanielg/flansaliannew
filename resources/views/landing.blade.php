@@ -207,11 +207,12 @@
             <div class="text-center mb-5">
                 <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Environment</h6>
                 <h2 class="display-5 fw-bold mb-0 text-dark">School <span class="text-primary">Gallery</span></h2>
+                <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">Explore moments from our school life, events, and achievements.</p>
             </div>
             @php
                 $galleryImages = collect();
                 try {
-                    $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->get();
+                    $galleryImages = \App\Models\Gallery::where('is_active', true)->orderBy('order')->take(8)->get();
                 } catch (\Exception $e) {
                     $galleryImages = collect();
                 }
@@ -221,9 +222,9 @@
                 <div class="col-md-4 col-sm-6 animate__animated animate__zoomIn {{ $index > 0 ? 'animate__delay-' . min($index, 3) . 's' : '' }}">
                     <div class="gallery-item rounded-5 overflow-hidden shadow-sm position-relative" style="cursor: pointer;" onclick="openLightbox('{{ asset('storage/' . $gImg->image) }}', '{{ $gImg->title }}')">
                         <img src="{{ asset('storage/' . $gImg->image) }}" alt="{{ $gImg->title }}" class="img-fluid transition-hover" style="height: 300px; width: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none'">
-                        <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-gradient-dark text-white" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                            <h6 class="fw-bold mb-0">{{ $gImg->title }}</h6>
-                            <small class="opacity-75">{{ $gImg->category }}</small>
+                        <div class="gallery-overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-end p-4 text-white" style="background: linear-gradient(transparent 40%, rgba(0,26,51,0.85)); opacity: 0; transition: opacity 0.3s ease;">
+                            <h6 class="fw-bold mb-1">{{ $gImg->title }}</h6>
+                            <small class="opacity-75"><i class="bi bi-tag me-1"></i>{{ $gImg->category }}</small>
                         </div>
                     </div>
                 </div>
@@ -234,6 +235,13 @@
                 </div>
                 @endforelse
             </div>
+            @if($galleryImages->count() > 0)
+            <div class="text-center mt-5">
+                <a href="{{ route('gallery') }}" class="btn btn-primary rounded-pill px-5 fw-bold">
+                    <i class="bi bi-images me-2"></i>View Full Gallery
+                </a>
+            </div>
+            @endif
         </div>
     </section>
 
@@ -259,7 +267,7 @@
                     <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden transition-hover text-center">
                         <div style="height: 300px; background: #f8f9fa; overflow: hidden;">
                             @if($member->photo)
-                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x300?text=No+Photo'">
+                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-100 h-100" style="object-fit: cover;">
                             @else
                             <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-primary-light">
                                 <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 100px; height: 100px; font-size: 2.5rem;">
@@ -401,25 +409,36 @@
             </div>
             <div class="row g-4">
                 @php
-                    $staff = [
-                        ['name' => 'School Principal', 'role' => 'Leadership', 'desc' => 'Committed to academic excellence and spiritual growth.'],
-                        ['name' => 'Academic Dean', 'role' => 'Academics', 'desc' => 'Overseeing our rigorous and innovative curriculum.'],
-                        ['name' => 'Head Teacher', 'role' => 'Operations', 'desc' => 'Ensuring a safe and supportive environment for all.'],
-                        ['name' => 'School Chaplain', 'role' => 'Spiritual', 'desc' => 'Guiding the spiritual journey of our students.'],
-                    ];
+                    $staff = collect();
+                    try {
+                        $staff = \App\Models\Team::where('is_active', true)->orderBy('order')->take(4)->get();
+                    } catch (\Exception $e) {
+                        $staff = collect();
+                    }
                 @endphp
-                @foreach($staff as $member)
+                @forelse($staff as $member)
                 <div class="col-lg-3 col-md-6">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center p-4 h-100 transition-hover staff-card">
                         <div class="mb-3 position-relative d-inline-block mx-auto">
-                            <img src="https://ui-avatars.com/api/?name={{ urlencode($member['name']) }}&background=003366&color=fff&size=128" alt="{{ $member['name'] }}" class="rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #f8f9fa;">
+                            @if($member->photo)
+                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #f8f9fa;">
+                            @else
+                            <div class="rounded-circle shadow-sm d-flex align-items-center justify-content-center fw-bold text-white" style="width: 100px; height: 100px; background: var(--primary-blue); font-size: 2.5rem; border: 3px solid #f8f9fa;">
+                                {{ strtoupper(substr($member->name, 0, 1)) }}
+                            </div>
+                            @endif
                         </div>
-                        <h5 class="fw-bold mb-1 text-dark">{{ $member['name'] }}</h5>
-                        <p class="text-primary small fw-bold text-uppercase mb-3 tracking-wider">{{ $member['role'] }}</p>
-                        <p class="text-muted small mb-0">{{ $member['desc'] }}</p>
+                        <h5 class="fw-bold mb-1 text-dark">{{ $member->name }}</h5>
+                        <p class="text-primary small fw-bold text-uppercase mb-3 tracking-wider">{{ $member->position }}</p>
+                        <p class="text-muted small mb-0">{{ Str::limit($member->bio ?? 'Committed to excellence in education.', 80) }}</p>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                <div class="col-12 text-center text-muted py-5">
+                    <i class="bi bi-people fs-1 d-block mb-3 opacity-25"></i>
+                    <p>No team members added yet.</p>
+                </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -475,6 +494,8 @@
         .z-1 { z-index: 1; }
         .gallery-item img { transition: transform 0.5s ease; }
         .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item .gallery-overlay { opacity: 0; transition: opacity 0.3s ease; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
         .custom-accordion .accordion-button:not(.collapsed) {
             background-color: var(--primary-blue);
             color: white !important;

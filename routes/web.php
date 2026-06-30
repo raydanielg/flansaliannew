@@ -89,3 +89,4 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::get('/team', [PageController::class, 'team'])->name('team');
+Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');

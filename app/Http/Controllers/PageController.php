@@ -9,6 +9,7 @@ use App\Models\Feedback;
 use App\Models\Fee;
 use App\Models\AdmissionStep;
 use App\Models\AdmissionRequirement;
+use App\Models\Gallery;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -145,5 +146,24 @@ class PageController extends Controller
         ];
 
         return view('pages.team', compact('teamMembers', 'page'));
+    }
+
+    public function gallery()
+    {
+        try {
+            $galleryImages = Gallery::where('is_active', true)
+                ->orderBy('order', 'asc')
+                ->get();
+        } catch (\Exception $e) {
+            $galleryImages = collect();
+        }
+
+        $page = (object)[
+            'slug' => 'gallery',
+            'title' => 'School Gallery',
+            'content' => 'Explore our collection of photos showcasing school life, events, facilities, and achievements.',
+        ];
+
+        return view('pages.gallery', compact('galleryImages', 'page'));
     }
 }
