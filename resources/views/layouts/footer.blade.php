@@ -2,7 +2,7 @@
     <div class="container py-4">
         <div class="row g-4">
             <!-- Brand & Logo -->
-            <div class="col-lg-4 col-md-6 pe-lg-5">
+            <div class="col-lg-3 col-md-6 pe-lg-4">
                 <div class="d-flex align-items-center mb-4">
                     <img src="{{ asset('logo.png') }}" 
                          alt="School Logo" 
@@ -36,7 +36,7 @@
             </div>
 
             <!-- Services/Programs -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <h6 class="footer-title">Huduma Zetu</h6>
                 <ul class="list-unstyled footer-links">
                     <li><a href="#">Elimu ya Msingi</a></li>
@@ -47,20 +47,43 @@
             </div>
 
             <!-- Contact Info -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <h6 class="footer-title">Mawasiliano</h6>
                 <div class="d-flex mb-3 align-items-start">
                     <i class="bi bi-geo-alt text-warning me-3 mt-1"></i>
-                    <p class="text-secondary small mb-0">S.L.P 123, Gongo la Mboto,<br>Dar es Salaam, Tanzania</p>
+                    <p class="text-secondary small mb-0">P.O. BOX 75652<br>Dar es Salaam</p>
                 </div>
                 <div class="d-flex mb-3 align-items-center">
                     <i class="bi bi-telephone text-warning me-3"></i>
-                    <p class="text-secondary small mb-0">+255 123 456 789</p>
+                    <p class="text-secondary small mb-0">Mobile: +255 749 770 703</p>
+                </div>
+                <div class="d-flex mb-3 align-items-center">
+                    <i class="bi bi-telephone text-warning me-3"></i>
+                    <p class="text-secondary small mb-0">Mobile: +255 688 367 100</p>
                 </div>
                 <div class="d-flex mb-3 align-items-center">
                     <i class="bi bi-envelope text-warning me-3"></i>
                     <p class="text-secondary small mb-0">info@fransalian.ac.tz</p>
                 </div>
+            </div>
+
+            <!-- Location Map -->
+            <div class="col-lg-3 col-md-6">
+                <h6 class="footer-title">Mahali Tulipo</h6>
+                <div class="rounded-3 overflow-hidden shadow-sm" style="border: 1px solid rgba(255,255,255,0.1);">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Fransalian+School+Bombambili,+Dar+es+Salaam&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="200"
+                        style="border:0; filter: grayscale(0.2) contrast(1.1);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-secondary small mt-2 mb-0">
+                    <i class="bi bi-pin-map-fill text-warning me-2"></i>Bombambili, Dar es Salaam
+                </p>
             </div>
         </div>
 
