@@ -32,6 +32,7 @@ class AdminController extends Controller
             'total_faqs' => HelpDesk::count(),
             'total_news' => News::count(),
             'total_gallery' => Gallery::count(),
+            'total_team' => Team::count(),
         ];
 
         $recent_applications = Application::latest()->take(5)->get();

@@ -58,6 +58,15 @@
             </div>
         </div>
     </div>
+    <div class="col-xl col-lg-4 col-md-6">
+        <div class="stat-card">
+            <div class="stat-icon blue" style="background: #fd7e14;"><i class="bi bi-people"></i></div>
+            <div class="stat-details">
+                <h3>{{ $stats['total_team'] }}</h3>
+                <p>Team Members</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row g-4">

@@ -44,6 +44,7 @@
                 <li class="nav-item"><a href="{{ route('vision') }}" class="nav-link {{ Request::is('vision') ? 'active' : '' }}">VISION</a></li>
                 <li class="nav-item"><a href="{{ route('admission') }}" class="nav-link {{ Request::is('admission') ? 'active' : '' }}">ADMISSION</a></li>
                 <li class="nav-item"><a href="{{ route('fees') }}" class="nav-link {{ Request::is('fees') ? 'active' : '' }}">FEES</a></li>
+                <li class="nav-item"><a href="{{ route('team') }}" class="nav-link {{ Request::is('team') ? 'active' : '' }}">TEAM</a></li>
                 <li class="nav-item"><a href="{{ route('portal') }}" class="nav-link {{ Request::is('portal') ? 'active' : '' }}">PARENTS' PORTAL</a></li>
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">CONTACT US</a></li>
             </ul>
