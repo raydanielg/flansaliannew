@@ -84,6 +84,71 @@
         </div>
     </div>
 
+    <!-- MSFS Leaders Section -->
+    <section class="py-5 bg-light overflow-hidden">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Inspirational Figures</h6>
+                <h2 class="display-5 fw-bold text-dark">Leaders of the <span class="text-primary">MSFS Legacy</span></h2>
+                <p class="text-muted mt-3 mx-auto" style="max-width: 700px;">Meet the visionary saints and founders whose spirit guides our mission and education.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- St. Francis de Sales -->
+                <div class="col-lg-6 animate__animated animate__fadeInUp">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden" style="border-radius: 30px; background: #fff;">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <div class="h-100" style="min-height: 300px; background: #f8f9fa;">
+                                    <img src="{{ asset('images/St.-Francis-de-Sales4-768x1024.jpg') }}" alt="St. Francis de Sales" class="w-100 h-100" style="object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-md-7 p-4 d-flex flex-column">
+                                <div class="mb-auto">
+                                    <span class="badge bg-primary mb-2">Heavenly Patron</span>
+                                    <h4 class="fw-bold mb-1" style="color: #003366;">St. Francis de Sales</h4>
+                                    <p class="text-warning fw-bold small mb-3">(1567 – 1622)</p>
+                                    <p class="text-muted small" style="line-height: 1.7;">This school is dedicated to its heavenly patron St Francis de Sales (1567-1622). He was born on 21 August 1567 into a senatorial family in France where he was destined to work in government positions of authority. Instead, he felt called to become a priest in the Catholic Church. Within a few years of priestly ordination, Francis de Sales became the Bishop of Geneva, and became noted for his deep faith and his gentle approach to the Protestant Reformation at that time.</p>
+                                    <p class="text-muted small" style="line-height: 1.7;">Through his missionary efforts, he won back hundreds of Protestant Christians to the Catholic fold. He authored two well-known theological classics: <em>Introduction to the Devout Life</em> and <em>Treatise on the Love of God</em>. As a Doctor of the Church, Francis de Sales is famous for his teachings on the Catholic doctrine. He is also known as the Gentleman Saint. He died on 28 December 1622, aged 55 years. He was canonized as a Saint in 1665.</p>
+                                </div>
+                                <div class="mt-4 p-3 rounded-4" style="background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border-left: 4px solid #003366;">
+                                    <i class="bi bi-quote fs-3 text-primary opacity-25 mb-2 d-block"></i>
+                                    <p class="fst-italic text-dark mb-0 fw-bold">"You can catch more flies with a spoonful of honey than with a barrel of vinegar"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fr. Peter Marie Mermier -->
+                <div class="col-lg-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden" style="border-radius: 30px; background: #fff;">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <div class="h-100" style="min-height: 300px; background: #f8f9fa;">
+                                    <img src="{{ asset('images/fr-peter-mermier.webp') }}" alt="Fr. Peter Marie Mermier" class="w-100 h-100" style="object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-md-7 p-4 d-flex flex-column">
+                                <div class="mb-auto">
+                                    <span class="badge bg-warning text-dark mb-2">Founder of MSFS</span>
+                                    <h4 class="fw-bold mb-1" style="color: #003366;">Fr. Peter Marie Mermier</h4>
+                                    <p class="text-warning fw-bold small mb-3">Founder of the MSFS Congregation</p>
+                                    <p class="text-muted small" style="line-height: 1.7;">Fr Peter Marie Mermier, the founder of the Congregation of the Missionaries of St Francis de Sales, was born in Annecy, France, in 1790. He entered the seminary in Annecy, and was ordained priest in 1813. He died in 1862, and Pope John Paul II raised him to the status of Servant of God.</p>
+                                    <p class="text-muted small" style="line-height: 1.7;">Fr Mermier was interested in starting a congregation for preaching missions abroad. With the support of a few fellow-priests, he founded the MSFS Congregation which received canonical approval in 1838. For Fr Mermier, the Salesian spirituality was all-embracing and pastorally effective. The invitation of Pope Gregory XVI to extend missionary activities to the Church in Asia and Africa was the answer for Mermier’s prayer and longing. The MSFS today work in 26 countries, starting with India in 1845 and ending with Poland in 2003.</p>
+                                </div>
+                                <div class="mt-4 p-3 rounded-4" style="background: linear-gradient(135deg, #fffdf5 0%, #fff8e1 100%); border-left: 4px solid #ffc107;">
+                                    <i class="bi bi-quote fs-3 text-warning opacity-25 mb-2 d-block"></i>
+                                    <p class="fst-italic text-dark mb-0 fw-bold">"Education of the heart is the heart of education."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <style>
         .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
         .icon-small { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
