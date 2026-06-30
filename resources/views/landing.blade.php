@@ -4,15 +4,21 @@
     @include('layouts.header')
 
     <!-- Hero Section -->
-    <section class="position-relative overflow-hidden text-white d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(rgba(0, 26, 51, 0.7), rgba(0, 26, 51, 0.7)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <section class="position-relative overflow-hidden text-white d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('{{ asset('cropped-unnamed-8.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
             <div class="row justify-content-center">
-                <div class="col-lg-9 text-center animate__animated animate__fadeInUp">
+                <div class="col-lg-9 text-center">
+                    <p class="mb-3 fw-bold text-warning tracking-widest text-uppercase small">Welcome to Fransalian School</p>
                     <h1 class="display-2 fw-bold mb-4" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
-                    <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);"><em>Rooted in values. Driven by excellence. Committed to holistic growth.</em></p>
-                    <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg transition-hover" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
-                        <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
-                    </a>
+                    <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Rooted in values. Driven by excellence. Committed to holistic growth.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                            <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
+                        </a>
+                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold">
+                            <i class="bi bi-telephone-fill me-2"></i> Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
