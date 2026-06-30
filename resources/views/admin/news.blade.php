@@ -7,7 +7,7 @@
     <div class="col-12">
         <div class="admin-card p-4">
             <h5 class="fw-bold text-primary mb-3"><i class="bi bi-plus-circle me-2"></i>Add News Article</h5>
-            <form method="POST" action="{{ route('admin.news.store') }}">
+            <form method="POST" action="{{ route('admin.news.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-3">
                     <div class="col-md-6">
@@ -21,6 +21,9 @@
                             <input class="form-check-input" type="checkbox" name="is_active" value="1" checked id="isActive">
                             <label class="form-check-label fw-bold" for="isActive">Active</label>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="image" class="form-control" accept="image/*">
                     </div>
                     <div class="col-12">
                         <textarea name="content" class="form-control" rows="3" placeholder="Article content..." required></textarea>
@@ -46,8 +49,8 @@
                     <table class="admin-table table mb-0">
                         <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Title</th>
-                                <th>Slug</th>
                                 <th>Published</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -56,8 +59,16 @@
                         <tbody>
                             @forelse($news as $item)
                             <tr>
-                                <td><strong>{{ Str::limit($item->title, 40) }}</strong></td>
-                                <td><small class="text-muted">{{ $item->slug }}</small></td>
+                                <td>
+                                    @if($item->image)
+                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="rounded" style="width: 60px; height: 45px; object-fit: cover;">
+                                    @else
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width: 60px; height: 45px;">
+                                        <i class="bi bi-image text-muted"></i>
+                                    </div>
+                                    @endif
+                                </td>
+                                <td><strong>{{ Str::limit($item->title, 40) }}</strong><br><small class="text-muted">{{ $item->slug }}</small></td>
                                 <td>{{ $item->published_at ? \Carbon\Carbon::parse($item->published_at)->format('M d, Y') : 'Draft' }}</td>
                                 <td>
                                     @if($item->is_active)
@@ -77,6 +88,7 @@
                             </tr>
                             @empty
                             <tr><td colspan="5" class="text-center text-muted py-5"><i class="bi bi-inbox fs-1 d-block mb-3 opacity-25"></i>No news articles yet.</td></tr>
+
                             @endforelse
                         </tbody>
                     </table>
@@ -95,7 +107,7 @@
                 <h5 class="modal-title fw-bold text-primary">Edit News</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <form method="POST" action="{{ route('admin.news.update', $item) }}">
+            <form method="POST" action="{{ route('admin.news.update', $item) }}" enctype="multipart/form-data">
                 @csrf @method('PUT')
                 <div class="modal-body">
                     <div class="row g-3">
@@ -112,6 +124,15 @@
                                 <input class="form-check-input" type="checkbox" name="is_active" value="1" {{ $item->is_active ? 'checked' : '' }} id="editActive{{ $item->id }}">
                                 <label class="form-check-label fw-bold" for="editActive{{ $item->id }}">Active</label>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Image</label>
+                            <input type="file" name="image" class="form-control" accept="image/*">
+                            @if($item->image)
+                            <div class="mt-2">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="img-thumbnail" style="max-height: 100px;">
+                            </div>
+                            @endif
                         </div>
                         <div class="col-12">
                             <label class="form-label fw-bold">Content</label>

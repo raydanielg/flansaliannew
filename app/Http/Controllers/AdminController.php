@@ -145,11 +145,19 @@ class AdminController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'published_at' => 'nullable|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('news', 'public');
+        }
+
         News::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title) . '-' . time(),
             'content' => $request->content,
+            'image' => $imagePath,
             'published_at' => $request->published_at,
             'is_active' => $request->boolean('is_active', true),
         ]);
@@ -162,18 +170,32 @@ class AdminController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'published_at' => 'nullable|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
-        $news->update([
+
+        $data = [
             'title' => $request->title,
             'content' => $request->content,
             'published_at' => $request->published_at,
             'is_active' => $request->boolean('is_active', true),
-        ]);
+        ];
+
+        if ($request->hasFile('image')) {
+            if ($news->image) {
+                \Storage::disk('public')->delete($news->image);
+            }
+            $data['image'] = $request->file('image')->store('news', 'public');
+        }
+
+        $news->update($data);
         return back()->with('success', 'News article updated.');
     }
 
     public function deleteNews(News $news)
     {
+        if ($news->image) {
+            \Storage::disk('public')->delete($news->image);
+        }
         $news->delete();
         return back()->with('success', 'News article deleted.');
     }
