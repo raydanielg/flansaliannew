@@ -24,11 +24,6 @@
                     <h1 class="mb-1 fw-extrabold school-name-main" style="color: #003366; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: -1px; line-height: 1.1;">FRANSALIAN SCHOOL</h1>
                     <p class="mb-1 text-secondary fw-bold small">Pre & Primary School</p>
                     <p class="mb-0 fst-italic" style="color: #c9a227; font-size: 0.85rem;">Learning and Growing Together</p>
-                    <ul class="list-inline mb-0 mt-1">
-                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Knowledge</li>
-                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Love</li>
-                        <li class="list-inline-item small text-muted"><i class="bi bi-circle-fill text-primary me-1" style="font-size: 0.4rem; vertical-align: middle;"></i>Service</li>
-                    </ul>
                 </div>
             </div>
 
