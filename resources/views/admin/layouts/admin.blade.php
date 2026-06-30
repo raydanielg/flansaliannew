@@ -268,6 +268,9 @@
             <a href="{{ route('admin.gallery') }}" class="menu-item {{ request()->routeIs('admin.gallery') ? 'active' : '' }}">
                 <i class="bi bi-images"></i> Gallery
             </a>
+            <a href="{{ route('admin.team') }}" class="menu-item {{ request()->routeIs('admin.team') ? 'active' : '' }}">
+                <i class="bi bi-people"></i> Team
+            </a>
 
             <div class="menu-label">System</div>
             <a href="{{ route('admin.settings') }}" class="menu-item {{ request()->routeIs('admin.settings') ? 'active' : '' }}">

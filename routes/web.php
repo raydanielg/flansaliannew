@@ -77,7 +77,15 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::put('/gallery/{gallery}', [AdminController::class, 'updateGallery'])->name('admin.gallery.update');
     Route::delete('/gallery/{gallery}', [AdminController::class, 'deleteGallery'])->name('admin.gallery.delete');
 
+    // Team
+    Route::get('/team', [AdminController::class, 'team'])->name('admin.team');
+    Route::post('/team', [AdminController::class, 'storeTeam'])->name('admin.team.store');
+    Route::put('/team/{team}', [AdminController::class, 'updateTeam'])->name('admin.team.update');
+    Route::delete('/team/{team}', [AdminController::class, 'deleteTeam'])->name('admin.team.delete');
+
     // Settings
     Route::get('/settings', [AdminController::class, 'settings'])->name('admin.settings');
     Route::post('/settings', [AdminController::class, 'updateSettings'])->name('admin.settings.update');
 });
+
+Route::get('/team', [PageController::class, 'team'])->name('team');

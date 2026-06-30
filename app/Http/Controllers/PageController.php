@@ -9,6 +9,7 @@ use App\Models\Feedback;
 use App\Models\Fee;
 use App\Models\AdmissionStep;
 use App\Models\AdmissionRequirement;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -126,4 +127,23 @@ class PageController extends Controller
     public function feedback() { return $this->show('feedback'); }
     public function helpDesk() { return $this->show('help-desk'); }
     public function contact() { return $this->show('contact'); }
+
+    public function team()
+    {
+        try {
+            $teamMembers = Team::where('is_active', true)
+                ->orderBy('order', 'asc')
+                ->get();
+        } catch (\Exception $e) {
+            $teamMembers = collect();
+        }
+
+        $page = (object)[
+            'slug' => 'team',
+            'title' => 'Our Team',
+            'content' => 'Meet the dedicated team behind Fransalian School. Our staff is committed to providing quality education and nurturing every child.',
+        ];
+
+        return view('pages.team', compact('teamMembers', 'page'));
+    }
 }
