@@ -405,20 +405,66 @@
         .tracking-wider { letter-spacing: 0.1em; }
     </style>
 
-    <!-- CTA Section -->
-    <section class="py-5 bg-white">
+    <!-- Admission CTA Section -->
+    <section class="py-5 bg-white overflow-hidden">
         <div class="container py-5">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="cta-box bg-primary text-white p-5 rounded-5 shadow-lg text-center position-relative overflow-hidden" style="background: linear-gradient(135deg, #003366 0%, #0056b3 100%) !important;">
-                        <div class="position-relative z-1">
-                            <h2 class="display-5 fw-bold mb-4">Ready to Join Our School?</h2>
-                            <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px;">Applications for the new academic year are now being processed. Start your child's journey at Fransalian School Bombambili today.</p>
-                            <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-bold shadow transition-hover">
-                                START APPLICATION NOW
-                            </a>
+                <div class="col-lg-11">
+                    <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: linear-gradient(135deg, #003366 0%, #004080 50%, #0056b3 100%);">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-lg-7 p-5 p-lg-6 text-white">
+                                <div class="animate__animated animate__fadeInUp">
+                                    <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">Admissions 2026-27</h6>
+                                    <h2 class="display-5 fw-bold mb-4">Admission Open <span class="text-warning">2026-27</span></h2>
+                                    <p class="lead mb-4 opacity-90">We welcome students who aspire to grow with confidence, character, and competence.</p>
+                                </div>
+                                <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                                    <ul class="list-unstyled mb-5">
+                                        <li class="d-flex align-items-center mb-3">
+                                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 32px; height: 32px;">
+                                                <i class="bi bi-check-lg fw-bold"></i>
+                                            </div>
+                                            <span class="fs-5">Modern Infrastructure</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3">
+                                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 32px; height: 32px;">
+                                                <i class="bi bi-check-lg fw-bold"></i>
+                                            </div>
+                                            <span class="fs-5">Experienced Faculty</span>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 32px; height: 32px;">
+                                                <i class="bi bi-check-lg fw-bold"></i>
+                                            </div>
+                                            <span class="fs-5">Activity-Based Learning</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                                    <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow transition-hover">
+                                        <i class="bi bi-pencil-square me-2"></i>Register Now!
+                                    </a>
+                                    <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 rounded-pill fw-bold transition-hover">
+                                        <i class="bi bi-envelope me-2"></i>Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 p-4 p-lg-5">
+                                <div class="card border-0 shadow-lg rounded-4 overflow-hidden animate__animated animate__fadeInRight animate__delay-1s">
+                                    <div class="card-body p-4 text-center">
+                                        <div class="bg-primary-light text-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                            <i class="bi bi-telephone-fill fs-2"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-1">For Admission Enquiry</h5>
+                                        <p class="text-muted small mb-3">Speak with our admissions team today</p>
+                                        <a href="tel:+255749770703" class="h4 fw-bold text-decoration-none" style="color: #003366;">+255 749 770 703</a>
+                                        <div class="mt-3 pt-3 border-top">
+                                            <a href="tel:+255688367100" class="text-muted text-decoration-none small d-block">+255 688 367 100</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <i class="bi bi-mortarboard position-absolute end-0 bottom-0 display-1 opacity-10 mb-n4 me-n4"></i>
                     </div>
                 </div>
             </div>

@@ -93,6 +93,18 @@
                 <p class="text-muted mt-3 mx-auto" style="max-width: 700px;">Meet the visionary saints and founders whose spirit guides our mission and education.</p>
             </div>
 
+            <!-- Animated Quotes Banner -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-lg overflow-hidden text-center p-4 p-lg-5" style="border-radius: 30px; background: linear-gradient(135deg, #003366 0%, #004080 100%);">
+                        <i class="bi bi-quote fs-1 text-warning mb-3 d-block"></i>
+                        <p class="text-white fst-italic mb-0" style="font-size: 1.5rem; line-height: 1.6; min-height: 80px;">
+                            <span id="typewriter-quote"></span><span class="typewriter-cursor">|</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: #fff;">
@@ -135,10 +147,6 @@
                                         <p class="text-warning fw-bold mb-4">(1567 – 1622)</p>
                                         <p class="text-muted" style="line-height: 1.8;">This school is dedicated to its heavenly patron <strong>St Francis de Sales (1567-1622)</strong>. He was born on 21 August 1567 into a senatorial family in France where he was destined to work in government positions of authority. Instead, he felt called to become a priest in the Catholic Church. Within a few years of priestly ordination, Francis de Sales became the Bishop of Geneva, and became noted for his deep faith and his gentle approach to the Protestant Reformation at that time.</p>
                                         <p class="text-muted" style="line-height: 1.8;">Through his missionary efforts, he won back hundreds of Protestant Christians to the Catholic fold. He authored two well-known theological classics: <em>Introduction to the Devout Life</em> and <em>Treatise on the Love of God</em>. As a Doctor of the Church, Francis de Sales is famous for his teachings on the Catholic doctrine. He is also known as the Gentleman Saint. He died on 28 December 1622, aged 55 years. He was canonized as a Saint in 1665.</p>
-                                        <div class="p-4 rounded-4 mt-4" style="background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border-left: 4px solid #003366;">
-                                            <i class="bi bi-quote fs-3 text-primary opacity-25 mb-2 d-block"></i>
-                                            <p class="fst-italic text-dark mb-0 fw-bold lead">"You can catch more flies with a spoonful of honey than with a barrel of vinegar"</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -150,26 +158,26 @@
                                         <div class="row g-3">
                                             <div class="col-6">
                                                 <div class="text-center p-4 rounded-4 bg-white shadow-sm border h-100">
-                                                    <div class="display-5 fw-bold text-primary mb-1">26+</div>
+                                                    <div class="display-5 fw-bold text-primary mb-1">32+</div>
                                                     <div class="small text-muted fw-bold text-uppercase">Countries</div>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-center p-4 rounded-4 bg-white shadow-sm border h-100">
-                                                    <div class="display-5 fw-bold text-warning mb-1">500+</div>
+                                                    <div class="display-5 fw-bold text-warning mb-1">1000+</div>
                                                     <div class="small text-muted fw-bold text-uppercase">Member Priests</div>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-center p-4 rounded-4 bg-white shadow-sm border h-100">
-                                                    <div class="display-5 fw-bold text-success mb-1">3+</div>
-                                                    <div class="small text-muted fw-bold text-uppercase">Provinces in India</div>
+                                                    <div class="display-5 fw-bold text-success mb-1">12+</div>
+                                                    <div class="small text-muted fw-bold text-uppercase">Provinces Worldwide</div>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-center p-4 rounded-4 bg-white shadow-sm border h-100">
-                                                    <div class="display-5 fw-bold text-info mb-1">100+</div>
-                                                    <div class="small text-muted fw-bold text-uppercase">Institutions in India</div>
+                                                    <div class="display-5 fw-bold text-info mb-1">150+</div>
+                                                    <div class="small text-muted fw-bold text-uppercase">Institutions Worldwide</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -200,10 +208,6 @@
                                         <p class="text-muted" style="line-height: 1.8;">Fr Peter Marie Mermier, the founder of the Congregation of the Missionaries of St Francis de Sales, was born in Annecy, France, in <strong>1790</strong>. He entered the seminary in Annecy, and was ordained priest in 1813. He died in 1862, and Pope John Paul II raised him to the status of Servant of God.</p>
                                         <p class="text-muted" style="line-height: 1.8;">Fr Mermier was interested in starting a congregation for preaching missions abroad. With the support of a few fellow-priests, he founded the MSFS Congregation which received canonical approval in 1838. For Fr Mermier, the Salesian spirituality was all-embracing and pastorally effective. Mermier felt proud of his native saint, SFS. He wanted the members of his congregation to be contemplatives in action and mystics of God’s love.</p>
                                         <p class="text-muted" style="line-height: 1.8;">The invitation of Pope Gregory XVI to extend missionary activities to the Church in Asia and Africa was the answer for Mermier’s prayer and longing. The congregation was invited to take up pastoral activities in the Apostolic Vicariate of Visakhapatnam in 1846. The MSFS today work in 26 countries, starting with India in 1845 and ending with Poland in 2003.</p>
-                                        <div class="p-4 rounded-4 mt-4" style="background: linear-gradient(135deg, #fffdf5 0%, #fff8e1 100%); border-left: 4px solid #ffc107;">
-                                            <i class="bi bi-quote fs-3 text-warning opacity-25 mb-2 d-block"></i>
-                                            <p class="fst-italic text-dark mb-0 fw-bold lead">"Education of the heart is the heart of education."</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,5 +247,56 @@
         .msfs-tabs .nav-link {
             margin-bottom: 0 !important;
         }
+        .typewriter-cursor {
+            animation: blink 1s infinite;
+            color: #ffc107;
+            font-weight: 100;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
     </style>
+
+    <script>
+        (function() {
+            const quotes = [
+                "You can catch more flies with a spoonful of honey than with a barrel of vinegar — St. Francis de Sales",
+                "Education of the heart is the heart of education. — Fr. Peter Marie Mermier"
+            ];
+            const element = document.getElementById('typewriter-quote');
+            let quoteIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 80;
+
+            function typeWriter() {
+                const currentQuote = quotes[quoteIndex];
+                if (isDeleting) {
+                    element.textContent = currentQuote.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 40;
+                } else {
+                    element.textContent = currentQuote.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 80;
+                }
+
+                if (!isDeleting && charIndex === currentQuote.length) {
+                    isDeleting = true;
+                    typingSpeed = 2500;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                    typingSpeed = 500;
+                }
+
+                setTimeout(typeWriter, typingSpeed);
+            }
+
+            if (element) {
+                typeWriter();
+            }
+        })();
+    </script>
 @endsection
