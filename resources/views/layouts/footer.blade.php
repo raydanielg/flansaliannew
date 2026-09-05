@@ -52,19 +52,23 @@
                 <h6 class="footer-title">Contact Info</h6>
                 <div class="d-flex mb-3 align-items-start">
                     <i class="bi bi-geo-alt text-warning me-3 mt-1"></i>
-                    <p class="text-secondary small mb-0">P.O. BOX 75652<br>Dar es Salaam</p>
+                    <p class="text-secondary small mb-0">Kapungu Street, Bombambili<br>Dar es Salaam</p>
+                </div>
+                <div class="d-flex mb-2 align-items-center">
+                    <i class="bi bi-telephone text-warning me-3"></i>
+                    <p class="text-secondary small mb-0">0761 391 936</p>
+                </div>
+                <div class="d-flex mb-2 align-items-center">
+                    <i class="bi bi-telephone text-warning me-3"></i>
+                    <p class="text-secondary small mb-0">0784 377 306</p>
                 </div>
                 <div class="d-flex mb-3 align-items-center">
                     <i class="bi bi-telephone text-warning me-3"></i>
-                    <p class="text-secondary small mb-0">Mobile: +255 749 770 703</p>
-                </div>
-                <div class="d-flex mb-3 align-items-center">
-                    <i class="bi bi-telephone text-warning me-3"></i>
-                    <p class="text-secondary small mb-0">Mobile: +255 688 367 100</p>
+                    <p class="text-secondary small mb-0">0686 695 311</p>
                 </div>
                 <div class="d-flex mb-3 align-items-center">
                     <i class="bi bi-envelope text-warning me-3"></i>
-                    <p class="text-secondary small mb-0">info@fransalian.ac.tz</p>
+                    <p class="text-secondary small mb-0">fransalianb2@gmail.com</p>
                 </div>
             </div>
 

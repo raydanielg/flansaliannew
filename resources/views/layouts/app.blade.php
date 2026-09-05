@@ -45,11 +45,11 @@
         "url": "{{ url('/') }}",
         "logo": "{{ asset('logo.png') }}",
         "image": "{{ asset('images/jengofarasaian.png') }}",
-        "telephone": "+255749770703",
-        "email": "info@fransalian.ac.tz",
+        "telephone": "+255761391936",
+        "email": "fransalianb2@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Bombambili, Gongo la Mboto",
+            "streetAddress": "Kapungu Street, Bombambili",
             "addressLocality": "Dar es Salaam",
             "addressCountry": "TZ"
         }

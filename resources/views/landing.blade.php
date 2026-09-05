@@ -62,12 +62,12 @@
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
                     <i class="bi bi-telephone-fill text-warning me-2"></i>
-                    For enquiries call +255 749 770 703 or +255 688 367 100
+                    For enquiries call 0761 391 936 or 0784 377 306 or 0686 695 311
                 </span>
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
                     <i class="bi bi-envelope-fill text-warning me-2"></i>
-                    Email us at info@fransalian.ac.tz
+                    Email us at fransalianb2@gmail.com
                 </span>
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
@@ -82,12 +82,12 @@
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
                     <i class="bi bi-telephone-fill text-warning me-2"></i>
-                    For enquiries call +255 749 770 703 or +255 688 367 100
+                    For enquiries call 0761 391 936 or 0784 377 306 or 0686 695 311
                 </span>
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
                     <i class="bi bi-envelope-fill text-warning me-2"></i>
-                    Email us at info@fransalian.ac.tz
+                    Email us at fransalianb2@gmail.com
                 </span>
             </div>
         </div>

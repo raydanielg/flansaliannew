@@ -8,6 +8,7 @@
 @section('content')
     @include('layouts.header')
 
+    <!-- Hero Banner -->
     <section class="position-relative overflow-hidden" style="padding: 90px 0 60px;">
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004080 100%);"></div>
         <div class="position-absolute top-0 end-0 opacity-10" style="width: 400px; height: 400px; background: radial-gradient(circle, #007bff 0%, transparent 70%); transform: translate(30%, -30%);"></div>
@@ -18,133 +19,320 @@
                     <i class="bi bi-house-door-fill text-white small"></i>
                     <a href="{{ route('welcome') }}" class="text-white text-decoration-none small">Home</a>
                     <i class="bi bi-chevron-right text-white-50 small"></i>
-                    <span class="text-warning small fw-bold">{{ ucfirst($page->slug) }}</span>
+                    <span class="text-warning small fw-bold">Fees 2026</span>
                 </div>
-                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">{{ $page->title }}</h1>
-                <div class="mx-auto" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4a); border-radius: 2px;"></div>
+                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Mchanganuo wa Ada — Mwaka 2026</h1>
+                <p class="text-white-50 mb-0">Fee Structure for Academic Year 2026</p>
+                <div class="mx-auto mt-3" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4a); border-radius: 2px;"></div>
             </div>
         </div>
     </section>
     <div style="height: 5px; background: linear-gradient(90deg, #ffd700, #ffed4a, #ffd700);"></div>
 
+    <!-- Fee Tables -->
     <div class="container py-5 animate__animated animate__fadeIn">
-        <div class="row justify-content-center">
-            <div class="col-md-11">
-                <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px; background: #fff;">
-                    <div class="row g-0">
-                        <!-- Content Sidebar Info -->
-                        <div class="col-lg-3 bg-light p-4 d-flex flex-column align-items-center text-center border-end">
-                            <div class="icon-box bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4 shadow-sm" style="width: 100px; height: 100px; border: 2px solid var(--primary-blue);">
-                                <i class="bi bi-wallet2 fs-1" style="color: var(--primary-blue) !important;"></i>
-                            </div>
-                            <h4 class="fw-bold text-dark mb-2 text-uppercase small tracking-widest">FEES</h4>
-                            <div class="divider bg-warning mx-auto mb-4" style="width: 40px; height: 3px;"></div>
-                            <p class="text-muted small italic px-2">Affordable investment in your child's future.</p>
-                        </div>
 
-                        <!-- Main Content Area -->
-                        <div class="col-lg-9 p-5">
-                            <div class="content-header mb-4 pb-3 border-bottom">
-                                <h2 class="fw-bold text-dark mb-0" style="color: var(--primary-blue) !important;">Investment in Excellence</h2>
+        <!-- Table 1: Main Fee Breakdown -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-11">
+                <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 24px;">
+                    <div class="card-header text-white py-4 px-4" style="background: linear-gradient(135deg, #003366, #004080); border: none;">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;">
+                                <i class="bi bi-table fs-4" style="color: #003366;"></i>
                             </div>
-                            
-                            <div class="page-body-content mb-5">
-                                <p class="lead text-muted" style="line-height: 1.8;">{{ $page->content }}</p>
-                            @if($page->slug == 'fees')
-                            <!-- Fees Content -->
-                            <div class="fees-container animate__animated animate__fadeIn">
-                                <!-- English Fee Table -->
-                                <div class="mb-5">
-                                    <h4 class="fw-bold text-dark mb-3 text-uppercase small border-start border-4 border-primary ps-3">SCHOOL FEES AND OTHER RELATED EXPENSES FOR ONE YEAR</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover table-bordered border-light shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                                            <thead class="bg-primary text-white" style="background-color: var(--primary-blue) !important;">
-                                                <tr class="text-center small">
-                                                    <th class="py-3">Level</th>
-                                                    <th class="py-3">Fees</th>
-                                                    <th class="py-3">Food</th>
-                                                    <th class="py-3">Stationery</th>
-                                                    <th class="py-3">Others</th>
-                                                    <th class="py-3 bg-dark">Total</th>
-                                                    <th class="py-3 bg-warning text-dark">Term 1</th>
-                                                    <th class="py-3 bg-warning text-dark">Term 2</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @forelse($fees as $fee)
-                                                <tr class="text-center align-middle">
-                                                    <td class="fw-bold text-dark">{{ $fee->level_en }}</td>
-                                                    <td>{{ $fee->tuition_fees }}</td>
-                                                    <td>{{ $fee->food }}</td>
-                                                    <td>{{ $fee->stationery }}</td>
-                                                    <td>{{ $fee->other_expenses }}</td>
-                                                    <td class="fw-bold text-dark bg-light">{{ $fee->total }}</td>
-                                                    <td class="fw-bold text-primary">{{ $fee->term_1 }}/=</td>
-                                                    <td class="fw-bold text-primary">{{ $fee->term_2 }}/=</td>
-                                                </tr>
-                                                @empty
-                                                <tr>
-                                                    <td colspan="8" class="text-center text-muted py-4">No fee data available.</td>
-                                                </tr>
-                                                @endforelse
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i> Transportation costs is paid separately for those who use school transport.</p>
-                                </div>
-
-                                <!-- Swahili Fee Table -->
-                                <div class="mb-5 animate__animated animate__fadeInUp">
-                                    <h4 class="fw-bold text-dark mb-3 text-uppercase small border-start border-4 border-warning ps-3">ADA YA SHULE NA GHARAMA ZINGINE ZINAZOHUSIANA KWA MWAKA MMOJA</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover table-bordered border-light shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                                            <thead class="bg-dark text-white">
-                                                <tr class="text-center small">
-                                                    <th class="py-3">Ngazi</th>
-                                                    <th class="py-3">Ada</th>
-                                                    <th class="py-3">Chakula</th>
-                                                    <th class="py-3">Vitabu/Vifaa</th>
-                                                    <th class="py-3">Nyinginezo</th>
-                                                    <th class="py-3 bg-secondary">Jumla Kuu</th>
-                                                    <th class="py-3 bg-warning text-dark">Muhula 1</th>
-                                                    <th class="py-3 bg-warning text-dark">Muhula 2</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @forelse($fees as $fee)
-                                                <tr class="text-center align-middle">
-                                                    <td class="fw-bold text-dark">{{ $fee->level_sw }}</td>
-                                                    <td>{{ $fee->tuition_fees }}/=</td>
-                                                    <td>{{ $fee->food }}/=</td>
-                                                    <td>{{ $fee->stationery }}/=</td>
-                                                    <td>{{ $fee->other_expenses }}/=</td>
-                                                    <td class="fw-bold text-dark bg-light">{{ $fee->total }}</td>
-                                                    <td class="fw-bold text-primary">{{ $fee->term_1 }}/=</td>
-                                                    <td class="fw-bold text-primary">{{ $fee->term_2 }}/=</td>
-                                                </tr>
-                                                @empty
-                                                <tr>
-                                                    <td colspan="8" class="text-center text-muted py-4">Taarifa za ada hazipatikani.</td>
-                                                </tr>
-                                                @endforelse
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i> Gharama za usafiri zitatolewa tofauti kwa watakaotumia usafiri wa shule.</p>
-                                </div>
-                            </div>
-                            @endif
+                            <div>
+                                <h4 class="fw-bold mb-0">Mchanganuo wa Ada na Michango Mingine</h4>
+                                <p class="mb-0 text-white-50 small">Fee Breakdown and Other Contributions — 2026</p>
                             </div>
                         </div>
                     </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered mb-0 align-middle" style="border-color: #e9ecef;">
+                                <thead style="background: linear-gradient(135deg, #003366, #0056b3);">
+                                    <tr class="text-center text-white small text-uppercase">
+                                        <th class="py-3 fw-bold">Daraja</th>
+                                        <th class="py-3 fw-bold">Ada</th>
+                                        <th class="py-3 fw-bold">Chakula</th>
+                                        <th class="py-3 fw-bold">Vitabu na Vifaa</th>
+                                        <th class="py-3 fw-bold">Gharama Zingine</th>
+                                        <th class="py-3 fw-bold" style="background: #002244;">Mtihani wa Nje</th>
+                                        <th class="py-3 fw-bold" style="background: #ffd700; color: #001a33 !important;">Jumla</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Pre-P 1</td>
+                                        <td>390,000</td>
+                                        <td>375,000</td>
+                                        <td>295,000</td>
+                                        <td>85,000</td>
+                                        <td class="text-muted">0</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,145,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Pre-P 2</td>
+                                        <td>390,000</td>
+                                        <td>375,000</td>
+                                        <td>315,000</td>
+                                        <td>100,000</td>
+                                        <td class="text-muted">0</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,180,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Std I</td>
+                                        <td>450,000</td>
+                                        <td>375,000</td>
+                                        <td>350,000</td>
+                                        <td>85,000</td>
+                                        <td class="text-muted">0</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,260,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Std II</td>
+                                        <td>450,000</td>
+                                        <td>375,000</td>
+                                        <td>350,000</td>
+                                        <td>85,000</td>
+                                        <td>25,000</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,285,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Std III</td>
+                                        <td>450,000</td>
+                                        <td>375,000</td>
+                                        <td>350,000</td>
+                                        <td>85,000</td>
+                                        <td class="text-muted">0</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,260,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">Std IV</td>
+                                        <td>500,000</td>
+                                        <td>375,000</td>
+                                        <td>355,000</td>
+                                        <td>85,000</td>
+                                        <td>30,000</td>
+                                        <td class="fw-bold" style="background: rgba(255,215,0,0.1); color: #003366;">1,345,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-2 px-4 border-0">
+                        <p class="text-muted small mb-0"><i class="bi bi-info-circle me-1 text-primary"></i> Thamani zote zilizoonyeshwa zipo kwa Tsh (TZS). Ada ya usafiri inalipwa kando.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 2: Fee Installment Schedule -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-11">
+                <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 24px;">
+                    <div class="card-header text-white py-4 px-4" style="background: linear-gradient(135deg, #003366, #004080); border: none;">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;">
+                                <i class="bi bi-calendar-check fs-4" style="color: #003366;"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-0">Ada Inaweza Kulipwa kwa Awamu Nne (4) kwa Mwaka</h4>
+                                <p class="mb-0 text-white-50 small">Tuition Fee — Four Installment Payment Plan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered mb-0 align-middle" style="border-color: #e9ecef;">
+                                <thead style="background: linear-gradient(135deg, #003366, #0056b3);">
+                                    <tr class="text-center text-white small text-uppercase">
+                                        <th class="py-3 fw-bold">Mwezi / Deadline</th>
+                                        <th class="py-3 fw-bold">Pre-P 1</th>
+                                        <th class="py-3 fw-bold">Pre-P 2</th>
+                                        <th class="py-3 fw-bold">Std I</th>
+                                        <th class="py-3 fw-bold">Std II</th>
+                                        <th class="py-3 fw-bold">Std III</th>
+                                        <th class="py-3 fw-bold">Std IV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark text-start ps-4">
+                                            <i class="bi bi-calendar-event text-primary me-2"></i>Kabla ya Jan. 01
+                                        </td>
+                                        <td class="fw-semibold">550,000</td>
+                                        <td class="fw-semibold">575,000</td>
+                                        <td class="fw-semibold">600,000</td>
+                                        <td class="fw-semibold">600,000</td>
+                                        <td class="fw-semibold">600,000</td>
+                                        <td class="fw-semibold">650,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark text-start ps-4">
+                                            <i class="bi bi-calendar-event text-primary me-2"></i>Kabla ya Apr. 01
+                                        </td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">245,000</td>
+                                        <td class="fw-semibold">245,000</td>
+                                        <td class="fw-semibold">245,000</td>
+                                        <td class="fw-semibold">245,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark text-start ps-4">
+                                            <i class="bi bi-calendar-event text-primary me-2"></i>Kabla ya Jul. 01
+                                        </td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">205,000</td>
+                                        <td class="fw-semibold">215,000</td>
+                                        <td class="fw-semibold">220,000</td>
+                                        <td class="fw-semibold">215,000</td>
+                                        <td class="fw-semibold">230,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark text-start ps-4">
+                                            <i class="bi bi-calendar-event text-primary me-2"></i>Kabla ya Okt. 01
+                                        </td>
+                                        <td class="fw-semibold">195,000</td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">220,000</td>
+                                        <td class="fw-semibold">200,000</td>
+                                        <td class="fw-semibold">220,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-2 px-4 border-0">
+                        <p class="text-muted small mb-0"><i class="bi bi-info-circle me-1 text-primary"></i> Ada inaweza kulipwa kwa sehemu nne (4) kufikia tarehe zilizoonyeshwa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 3: Transport Fee -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-11">
+                <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 24px;">
+                    <div class="card-header text-white py-4 px-4" style="background: linear-gradient(135deg, #003366, #004080); border: none;">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;">
+                                <i class="bi bi-bus-front fs-4" style="color: #003366;"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-0">Ada ya Usafiri — Inaweza Kulipwa kwa Awamu Nne (4) kwa Mwaka</h4>
+                                <p class="mb-0 text-white-50 small">Transport Fee — Four Installment Payment Plan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered mb-0 align-middle" style="border-color: #e9ecef;">
+                                <thead style="background: linear-gradient(135deg, #003366, #0056b3);">
+                                    <tr class="text-center text-white small text-uppercase">
+                                        <th class="py-3 fw-bold">Umbali (KM)</th>
+                                        <th class="py-3 fw-bold" style="background: #002244;">Gharama ya Mwaka</th>
+                                        <th class="py-3 fw-bold">Kabla ya Jan. 01</th>
+                                        <th class="py-3 fw-bold">Kabla ya Apr. 01</th>
+                                        <th class="py-3 fw-bold">Kabla ya Jul. 01</th>
+                                        <th class="py-3 fw-bold">Kabla ya Okt. 01</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">
+                                            <i class="bi bi-geo-alt text-primary me-1"></i>0 – 5 Km
+                                        </td>
+                                        <td class="fw-bold" style="background: rgba(0,51,102,0.05); color: #003366;">650,000</td>
+                                        <td>162,500</td>
+                                        <td>162,500</td>
+                                        <td>162,500</td>
+                                        <td>162,500</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">
+                                            <i class="bi bi-geo-alt text-primary me-1"></i>5 – 25 Km
+                                        </td>
+                                        <td class="fw-bold" style="background: rgba(0,51,102,0.05); color: #003366;">700,000</td>
+                                        <td>175,000</td>
+                                        <td>175,000</td>
+                                        <td>175,000</td>
+                                        <td>175,000</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td class="fw-bold text-dark">
+                                            <i class="bi bi-geo-alt text-primary me-1"></i>25 – 30 Km
+                                        </td>
+                                        <td class="fw-bold" style="background: rgba(0,51,102,0.05); color: #003366;">800,000</td>
+                                        <td>200,000</td>
+                                        <td>200,000</td>
+                                        <td>200,000</td>
+                                        <td>200,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-2 px-4 border-0">
+                        <p class="text-muted small mb-0"><i class="bi bi-info-circle me-1 text-primary"></i> Ada ya usafiri inategemea umbali wa makazi yako na shule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="row justify-content-center g-4 mb-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 rounded-4 p-4 text-center" style="border-top: 4px solid #003366;">
+                    <div class="bg-primary-light rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <i class="bi bi-cash-coin fs-3" style="color: #003366;"></i>
+                    </div>
+                    <h6 class="fw-bold text-dark mb-2">Malipo kwa Awamu</h6>
+                    <p class="text-muted small mb-0">Ada inaweza kulipwa kwa sehemu nne (4) kufikia tarehe zilizoonyeshwa kwenye jedwali.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 rounded-4 p-4 text-center" style="border-top: 4px solid #ffd700;">
+                    <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background: rgba(255,215,0,0.15);">
+                        <i class="bi bi-bus-front fs-3" style="color: #b8860b;"></i>
+                    </div>
+                    <h6 class="fw-bold text-dark mb-2">Usafiri wa Shule</h6>
+                    <p class="text-muted small mb-0">Ada ya usafiri inalipwa kando na inategemea umbali wa makazi yako hadi shule.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 rounded-4 p-4 text-center" style="border-top: 4px solid #28a745;">
+                    <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background: rgba(40,167,69,0.12);">
+                        <i class="bi bi-telephone-fill fs-3" style="color: #28a745;"></i>
+                    </div>
+                    <h6 class="fw-bold text-dark mb-2">Wasiliana Nasi</h6>
+                    <p class="text-muted small mb-0">Kwa maswali zaidi kuhusu ada, wasiliana nasi: 0761 391 936 / 0784 377 306 / 0686 695 311</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <div class="text-center p-5 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #003366, #004080);">
+                    <h4 class="text-white fw-bold mb-3">Admission 2026 Inaendelea</h4>
+                    <p class="text-white-50 mb-4">Pre-Primary 1 & 2, Standard 1 – 4. Karibu uunge mkono familia ya Fransalian!</p>
+                    <a href="{{ route('apply') }}" class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                        <i class="bi bi-arrow-right-circle me-2"></i> Apply Now
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <style>
-        .tracking-wider { letter-spacing: 0.1rem; }
-        .transition-hover { transition: all 0.3s ease; }
-        .transition-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+        .bg-primary-light { background-color: rgba(0, 51, 102, 0.08); }
+        .table > :not(caption) > * > * { padding: 0.85rem 0.5rem; }
+        .card-header { border-radius: 0 !important; }
+        @media (max-width: 768px) {
+            .table > :not(caption) > * > * { padding: 0.6rem 0.4rem; font-size: 0.8rem; }
+        }
     </style>
 @endsection

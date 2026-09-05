@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('meta_title', 'Contact Us | Fransalian School')
-@section('meta_description', 'Contact Fransalian School Bombambili, Dar es Salaam. Call +255 749 770 703 or email info@fransalian.ac.tz for admissions and enquiries.')
+@section('meta_description', 'Contact Fransalian School Bombambili, Dar es Salaam. Call 0761 391 936 or email fransalianb2@gmail.com for admissions and enquiries.')
 @section('og_title', 'Contact Us | Fransalian School')
 @section('og_description', 'Contact Fransalian School Bombambili, Dar es Salaam for admissions and enquiries.')
 
@@ -37,16 +37,16 @@
                             <i class="bi bi-geo-alt-fill fs-2"></i>
                         </div>
                         <h5 class="fw-bold mb-2" style="color: #003366;">Our Location</h5>
-                        <p class="text-muted mb-0">Bombambili, Gongo la Mboto,<br>Dar es Salaam, Tanzania</p>
+                        <p class="text-muted mb-0">Kapungu Street, Bombambili,<br>Dar es Salaam, Tanzania</p>
                     </div>
                 </div>
                 <div class="col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
-                    <a href="tel:+255749770703" class="card border-0 shadow-lg h-100 p-4 text-center text-decoration-none contact-card d-block" style="border-radius: 20px; background: #fff;">
+                    <a href="tel:0761391936" class="card border-0 shadow-lg h-100 p-4 text-center text-decoration-none contact-card d-block" style="border-radius: 20px; background: #fff;">
                         <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3 shadow" style="width: 70px; height: 70px;">
                             <i class="bi bi-telephone-fill fs-2"></i>
                         </div>
                         <h5 class="fw-bold mb-2" style="color: #003366;">Call Us</h5>
-                        <p class="text-muted mb-0">+255 749 770 703<br>+255 688 367 100</p>
+                        <p class="text-muted mb-0">0761 391 936<br>0784 377 306<br>0686 695 311</p>
                     </a>
                 </div>
                 <div class="col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
@@ -55,7 +55,7 @@
                             <i class="bi bi-envelope-fill fs-2"></i>
                         </div>
                         <h5 class="fw-bold mb-2" style="color: #003366;">Email Us</h5>
-                        <p class="text-muted mb-0">fransalianb2@gmail.com<br>info@fransalian.ac.tz</p>
+                        <p class="text-muted mb-0">fransalianb2@gmail.com</p>
                     </a>
                 </div>
             </div>
