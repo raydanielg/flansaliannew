@@ -319,8 +319,8 @@
                 <div class="text-center p-5 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #003366, #004080);">
                     <h4 class="text-white fw-bold mb-3">Admission 2026 Inaendelea</h4>
                     <p class="text-white-50 mb-4">Pre-Primary 1 & 2, Standard 1 – 4. Karibu uunge mkono familia ya Fransalian!</p>
-                    <a href="{{ route('apply') }}" class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
-                        <i class="bi bi-arrow-right-circle me-2"></i> Apply Now
+                    <a href="{{ asset('APPLICATION AND ADMISSION FORM.pdf') }}" download class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
+                        <i class="bi bi-download me-2"></i> Pakua Fomu / Download Form
                     </a>
                 </div>
             </div>
