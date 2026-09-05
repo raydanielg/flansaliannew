@@ -31,7 +31,7 @@
                     <h1 class="display-2 fw-bold mb-4 hero-title" style="line-height: 1.1; text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Shaping Young Minds for a <span class="text-warning">Brighter Tomorrow</span></h1>
                     <p class="lead mb-5 opacity-90 mx-auto hero-subtitle" style="max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Rooted in values. Driven by excellence. Committed to holistic growth.</p>
                     <div class="d-flex flex-row justify-content-center align-items-center gap-2 gap-md-3 flex-wrap hero-buttons">
-                        <a href="{{ route('apply') }}" class="btn btn-lg px-4 px-md-5 py-2 py-md-3 rounded-pill fw-bold shadow-lg hero-btn-primary" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none; white-space: nowrap;">
+                        <a href="{{ route('admission') }}" class="btn btn-lg px-4 px-md-5 py-2 py-md-3 rounded-pill fw-bold shadow-lg hero-btn-primary" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none; white-space: nowrap;">
                             <i class="bi bi-arrow-right-circle me-2"></i> Explore Now
                         </a>
                         <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-4 px-md-5 py-2 py-md-3 rounded-pill fw-bold hero-btn-outline" style="white-space: nowrap;">
@@ -586,6 +586,76 @@
         })();
     </script>
 
+    <!-- Download Admission Form Section -->
+    <section class="py-5 overflow-hidden" style="background: linear-gradient(135deg, #f0f4f8 0%, #e8f0fe 50%, #f0f4f8 100%);">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-lg overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-stretch">
+                            <!-- Left: Visual / Icon Side -->
+                            <div class="col-lg-5 position-relative" style="background: linear-gradient(135deg, #003366 0%, #004080 60%, #0056b3 100%); min-height: 320px;">
+                                <div class="position-absolute top-0 end-0 opacity-10" style="width: 300px; height: 300px; background: radial-gradient(circle, #ffd700 0%, transparent 70%); transform: translate(30%, -30%);"></div>
+                                <div class="position-absolute bottom-0 start-0 opacity-10" style="width: 200px; height: 200px; background: radial-gradient(circle, #007bff 0%, transparent 70%); transform: translate(-30%, 30%);"></div>
+                                <div class="d-flex flex-column align-items-center justify-content-center text-white text-center h-100 p-5 position-relative" style="z-index: 2;">
+                                    <div class="mb-4 animate__animated animate__pulse animate__infinite" style="animation-duration: 2s;">
+                                        <div class="bg-white rounded-4 shadow-lg d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                                            <i class="bi bi-file-earmark-text-fill" style="font-size: 4rem; color: #003366;"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="fw-bold mb-2">Fomu ya Maombi</h3>
+                                    <p class="text-white-50 mb-0 small">Admission Application Form</p>
+                                    <div class="mt-3 px-3 py-1 rounded-pill" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);">
+                                        <span class="small fw-bold text-warning"><i class="bi bi-file-pdf-fill me-1"></i>PDF Format</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Content & Download Button -->
+                            <div class="col-lg-7 p-5 p-lg-6 d-flex flex-column justify-content-center">
+                                <div>
+                                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3" style="color: #003366 !important;">Admissions 2026</h6>
+                                    <h2 class="display-5 fw-bold mb-3 text-dark">Download Admission <span style="color: #003366;">Form</span></h2>
+                                    <p class="text-muted mb-4" style="line-height: 1.8;">Pakua fomu ya maombi ya kujiunga na Fransalian School. Jaza fomu kisha ilete shuleni au tuma kupitia barua pepe. Download the admission application form, fill it in, and bring it to school or email it to us.</p>
+
+                                    <!-- Quick Info Badges -->
+                                    <div class="d-flex flex-wrap gap-2 mb-4">
+                                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(0,51,102,0.1); color: #003366; font-size: 0.8rem;">
+                                            <i class="bi bi-people-fill me-1"></i>Pre-Primary 1 &amp; 2
+                                        </span>
+                                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(0,51,102,0.1); color: #003366; font-size: 0.8rem;">
+                                            <i class="bi bi-book-fill me-1"></i>Standard 1 – 4
+                                        </span>
+                                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(255,193,7,0.15); color: #b8860b; font-size: 0.8rem;">
+                                            <i class="bi bi-calendar-event-fill me-1"></i>2026 Academic Year
+                                        </span>
+                                    </div>
+
+                                    <!-- Download Button -->
+                                    <a href="{{ asset('APPLICATION AND ADMISSION FORM.pdf') }}" download class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg text-decoration-none d-inline-flex align-items-center" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(255,215,0,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='';">
+                                        <i class="bi bi-download me-2" style="font-size: 1.3rem;"></i>
+                                        Pakua Fomu / Download Form
+                                    </a>
+
+                                    <!-- Secondary Actions -->
+                                    <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
+                                        <a href="mailto:fransalianb2@gmail.com?subject=Admission Application Form" class="text-decoration-none small fw-semibold" style="color: #003366;">
+                                            <i class="bi bi-envelope-fill me-1"></i>Email filled form to us
+                                        </a>
+                                        <span class="text-muted opacity-50">|</span>
+                                        <a href="{{ route('contact') }}" class="text-decoration-none small fw-semibold" style="color: #003366;">
+                                            <i class="bi bi-telephone-fill me-1"></i>Call us for help
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Admission CTA Section -->
     <section class="py-5 bg-white overflow-hidden">
         <div class="container py-5">
@@ -595,8 +665,8 @@
                         <div class="row g-0 align-items-center">
                             <div class="col-lg-7 p-5 p-lg-6 text-white">
                                 <div class="animate__animated animate__fadeInUp">
-                                    <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">Admissions 2026-27</h6>
-                                    <h2 class="display-5 fw-bold mb-4">Admission Open <span class="text-warning">2026-27</span></h2>
+                                    <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">Admissions 2026</h6>
+                                    <h2 class="display-5 fw-bold mb-4">Admission Open <span class="text-warning">2026</span></h2>
                                     <p class="lead mb-4 opacity-90">We welcome students who aspire to grow with confidence, character, and competence.</p>
                                 </div>
                                 <div class="animate__animated animate__fadeInUp animate__delay-1s">
@@ -622,8 +692,8 @@
                                     </ul>
                                 </div>
                                 <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-2s">
-                                    <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow transition-hover">
-                                        <i class="bi bi-pencil-square me-2"></i>Register Now!
+                                    <a href="{{ asset('APPLICATION AND ADMISSION FORM.pdf') }}" download class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow transition-hover">
+                                        <i class="bi bi-download me-2"></i>Download Form
                                     </a>
                                     <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg px-5 rounded-pill fw-bold transition-hover">
                                         <i class="bi bi-envelope me-2"></i>Contact Us
@@ -638,9 +708,10 @@
                                         </div>
                                         <h5 class="fw-bold text-dark mb-1">For Admission Enquiry</h5>
                                         <p class="text-muted small mb-3">Speak with our admissions team today</p>
-                                        <a href="tel:+255749770703" class="h4 fw-bold text-decoration-none" style="color: #003366;">+255 749 770 703</a>
+                                        <a href="tel:0761391936" class="h4 fw-bold text-decoration-none" style="color: #003366;">0761 391 936</a>
                                         <div class="mt-3 pt-3 border-top">
-                                            <a href="tel:+255688367100" class="text-muted text-decoration-none small d-block">+255 688 367 100</a>
+                                            <a href="tel:0784377306" class="text-muted text-decoration-none small d-block">0784 377 306</a>
+                                            <a href="tel:0686695311" class="text-muted text-decoration-none small d-block mt-1">0686 695 311</a>
                                         </div>
                                     </div>
                                 </div>

@@ -169,8 +169,8 @@
                                         @endforeach
                                     </div>
 
-                                    <a href="{{ route('apply') }}" class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow-sm transition-hover">
-                                        <i class="bi bi-pencil-square me-2"></i> APPLY NOW / OMBA SASA
+                                    <a href="{{ asset('APPLICATION AND ADMISSION FORM.pdf') }}" download class="btn btn-warning btn-lg px-5 rounded-pill fw-bold shadow-sm transition-hover">
+                                        <i class="bi bi-download me-2"></i> PAKUA FOMU / DOWNLOAD FORM
                                     </a>
                                 </div>
                             </div>
