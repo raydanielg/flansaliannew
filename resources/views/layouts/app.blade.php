@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('meta_title', 'Fransalian School | Pre & Primary School - Dar es Salaam')</title>
-    <meta name="description" content="@yield('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2026-27.')">
+    <meta name="description" content="@yield('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2027.')">
     <meta name="keywords" content="@yield('meta_keywords', 'Fransalian School, Dar es Salaam, primary school, pre school, English medium, MSFS, Catholic school, admission, Bombambili, Gongo la Mboto')">
     <meta name="author" content="Fransalian School">
     <meta name="robots" content="index, follow">

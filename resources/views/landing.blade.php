@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('meta_title', 'Fransalian School | Pre & Primary English Medium School - Dar es Salaam')
-@section('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2026-27.')
+@section('meta_description', 'Fransalian School Bombambili, Dar es Salaam - A Pre & Primary English Medium School rooted in MSFS values. Knowledge, Love, Service. Admissions open for 2027.')
 @section('meta_keywords', 'Fransalian School, Dar es Salaam, primary school, pre school, English medium, MSFS, Catholic school, admission, Bombambili, Gongo la Mboto')
 @section('og_title', 'Fransalian School | Pre & Primary English Medium School')
 @section('og_description', 'Fransalian School Bombambili, Dar es Salaam - Rooted in values. Driven by excellence. Committed to holistic growth.')
@@ -52,7 +52,7 @@
             <div class="marquee-track d-flex align-items-center text-white">
                 <span class="marquee-item px-4">
                     <i class="bi bi-megaphone-fill text-warning me-2"></i>
-                    Admissions Open 2026-27 — Apply today and join the Fransalian family!
+                    Admissions Open 2027 — Apply today and join the Fransalian family!
                 </span>
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
@@ -72,7 +72,7 @@
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
                     <i class="bi bi-megaphone-fill text-warning me-2"></i>
-                    Admissions Open 2026-27 — Apply today and join the Fransalian family!
+                    Admissions Open 2027 — Apply today and join the Fransalian family!
                 </span>
                 <span class="marquee-divider text-warning">|</span>
                 <span class="marquee-item px-4">
@@ -614,7 +614,7 @@
                             <!-- Right: Content & Download Button -->
                             <div class="col-lg-7 p-5 p-lg-6 d-flex flex-column justify-content-center">
                                 <div>
-                                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3" style="color: #003366 !important;">Admissions 2026</h6>
+                                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3" style="color: #003366 !important;">Admissions 2027</h6>
                                     <h2 class="display-5 fw-bold mb-3 text-dark">Download Admission <span style="color: #003366;">Form</span></h2>
                                     <p class="text-muted mb-4" style="line-height: 1.8;">Pakua fomu ya maombi ya kujiunga na Fransalian School. Jaza fomu kisha ilete shuleni au tuma kupitia barua pepe. Download the admission application form, fill it in, and bring it to school or email it to us.</p>
 
@@ -627,7 +627,7 @@
                                             <i class="bi bi-book-fill me-1"></i>Standard 1 – 4
                                         </span>
                                         <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(255,193,7,0.15); color: #b8860b; font-size: 0.8rem;">
-                                            <i class="bi bi-calendar-event-fill me-1"></i>2026 Academic Year
+                                            <i class="bi bi-calendar-event-fill me-1"></i>2027 Academic Year
                                         </span>
                                     </div>
 
@@ -665,8 +665,8 @@
                         <div class="row g-0 align-items-center">
                             <div class="col-lg-7 p-5 p-lg-6 text-white">
                                 <div class="animate__animated animate__fadeInUp">
-                                    <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">Admissions 2026</h6>
-                                    <h2 class="display-5 fw-bold mb-4">Admission Open <span class="text-warning">2026</span></h2>
+                                    <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">Admissions 2027</h6>
+                                    <h2 class="display-5 fw-bold mb-4">Admission Open <span class="text-warning">2027</span></h2>
                                     <p class="lead mb-4 opacity-90">We welcome students who aspire to grow with confidence, character, and competence.</p>
                                 </div>
                                 <div class="animate__animated animate__fadeInUp animate__delay-1s">

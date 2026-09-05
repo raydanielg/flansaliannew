@@ -19,10 +19,10 @@
                     <i class="bi bi-house-door-fill text-white small"></i>
                     <a href="{{ route('welcome') }}" class="text-white text-decoration-none small">Home</a>
                     <i class="bi bi-chevron-right text-white-50 small"></i>
-                    <span class="text-warning small fw-bold">Fees 2026</span>
+                    <span class="text-warning small fw-bold">Fees 2027</span>
                 </div>
-                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Mchanganuo wa Ada — Mwaka 2026</h1>
-                <p class="text-white-50 mb-0">Fee Structure for Academic Year 2026</p>
+                <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Mchanganuo wa Ada — Mwaka 2027</h1>
+                <p class="text-white-50 mb-0">Fee Structure for Academic Year 2027</p>
                 <div class="mx-auto mt-3" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4a); border-radius: 2px;"></div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                             </div>
                             <div>
                                 <h4 class="fw-bold mb-0">Mchanganuo wa Ada na Michango Mingine</h4>
-                                <p class="mb-0 text-white-50 small">Fee Breakdown and Other Contributions — 2026</p>
+                                <p class="mb-0 text-white-50 small">Fee Breakdown and Other Contributions — 2027</p>
                             </div>
                         </div>
                     </div>
@@ -317,7 +317,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-11">
                 <div class="text-center p-5 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #003366, #004080);">
-                    <h4 class="text-white fw-bold mb-3">Admission 2026 Inaendelea</h4>
+                    <h4 class="text-white fw-bold mb-3">Admission 2027 Inaendelea</h4>
                     <p class="text-white-50 mb-4">Pre-Primary 1 & 2, Standard 1 – 4. Karibu uunge mkono familia ya Fransalian!</p>
                     <a href="{{ asset('APPLICATION AND ADMISSION FORM.pdf') }}" download class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" style="background: linear-gradient(135deg, #ffd700, #ffed4a); color: #001a33; border: none;">
                         <i class="bi bi-download me-2"></i> Pakua Fomu / Download Form
